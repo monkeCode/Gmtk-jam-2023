@@ -14,12 +14,12 @@ enum State{
 @export 
 var speed:float = 0
 @export 
-var atk:int = 0
+var damage:int = 0
 
 @export
 var atk_distance:float = 0
-
-var target = null
+@export
+var target:Damageable = null
 
 var animator:AnimatedSprite2D
 
@@ -35,7 +35,6 @@ func _ready():
 	state = State.Idle
 	animator = $AnimatedSprite2D
 	sprite = $AnimatedSprite2D
-	target = get_tree().get_root().get_node("test_dudes scene").get_node("target")
 
 func _process(delta):
 		
@@ -64,23 +63,29 @@ func move(point, delta):
 	var dir = (point - position).normalized()
 	velocity = dir * speed
 	is_normal = velocity.y > 0
-	if is_normal:
-		animator.play("move_normal")
-	else:
-		animator.play("move_backside")
+	play_anim("move")
 	
 func attack(target):
-	
-	if is_normal:
-		animator.play("atk_normal")
-	else:
-		animator.play("atk_backside")
+	can_change_state = false
+	play_anim('atk')
+	await animator.animation_finished
+	deal_damage(target)
+	can_change_state = true
+
+func deal_damage(target):
+	print_debug("deal_damage")
 
 func ability_1(target):
+	can_change_state = false
 	play_anim("ability_1")
-
+	await animator.animation_finished
+	can_change_state = true
+	
 func ability_2(target):
+	can_change_state = false
 	play_anim("ability_2")
+	await animator.animation_finished
+	can_change_state = true
 
 func thinking():
 	if ability_1_condition():

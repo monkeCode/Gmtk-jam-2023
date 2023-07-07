@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c7lg5vya6bj3p"]
+[gd_scene load_steps=41 format=3 uid="uid://dool0dihd5irg"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_jp4mh"]
 [ext_resource type="Texture2D" uid="uid://cbbi4luuc4cvb" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenIdle.png" id="2_bg7ai"]
@@ -250,6 +250,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch4g"]
 size = Vector2(42, 22)
 
+[sub_resource type="Animation" id="Animation_0b0j5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [45]
+}
+
 [sub_resource type="Animation" id="Animation_qp0nu"]
 resource_name = "idle"
 length = 0.6
@@ -301,21 +316,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [45, 46]
-}
-
-[sub_resource type="Animation" id="Animation_0b0j5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [45]
 }
 
 [sub_resource type="Animation" id="Animation_a8f86"]
@@ -379,16 +379,16 @@ _data = {
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2fb7x"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_jp4mh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.54747e-13, -1.19209e-07)
 scale = Vector2(4.4375, 4.40625)
 sprite_frames = SubResource("SpriteFrames_qna8r")
 animation = &"idle-front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 4)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_mch4g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
