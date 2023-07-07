@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7wlqvgal3rbo"]
+
+[ext_resource type="Script" path="res://Scripts/Dudes_scripts/Swordman.gd" id="1_vl7k8"]
+[ext_resource type="SpriteFrames" uid="uid://c2hnbl07128e0" path="res://scenes/dudes/SwordMan.tres" id="2_jhlrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs82c"]
+size = Vector2(9, 12)
+
+[node name="SwordMan" type="CharacterBody2D"]
+script = ExtResource("1_vl7k8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_jhlrh")
+animation = &"ability_1_backside"
+autoplay = "idle_normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_xs82c")

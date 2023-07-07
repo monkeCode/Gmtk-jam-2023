@@ -1,5 +1,5 @@
 class_name Damageable
-extends Node
+extends CharacterBody2D
 
 @export
 var _health : int

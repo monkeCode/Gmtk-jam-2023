@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmrfovsogbxjj"]
+
+[ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/SwordMan.tscn" id="1_knkpi"]
+
+[node name="test_dudes scene" type="Node2D"]
+
+[node name="SwordMan" parent="." instance=ExtResource("1_knkpi")]
+speed = 500.0
+atk = 1
+atk_distance = 20.0
+_health = 10
+_max_health = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(198, -17)
+zoom = Vector2(2.18, 2.18)
+
+[node name="target" type="Node2D" parent="."]
+position = Vector2(336, -44)
