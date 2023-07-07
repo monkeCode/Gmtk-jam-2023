@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://dool0dihd5irg"]
+[gd_scene load_steps=38 format=3 uid="uid://c7lg5vya6bj3p"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_jp4mh"]
 [ext_resource type="Texture2D" uid="uid://cbbi4luuc4cvb" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenIdle.png" id="2_bg7ai"]
 [ext_resource type="Texture2D" uid="uid://chfglvio37j7c" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenAnimations.png" id="3_1oeod"]
+[ext_resource type="Script" path="res://Attack_range.gd" id="4_2k25t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_do0vd"]
 atlas = ExtResource("3_1oeod")
@@ -250,161 +251,28 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mch4g"]
 size = Vector2(42, 22)
 
-[sub_resource type="Animation" id="Animation_0b0j5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [45]
-}
-
-[sub_resource type="Animation" id="Animation_qp0nu"]
-resource_name = "idle"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_1oeod")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [13]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [45, 46]
-}
-
-[sub_resource type="Animation" id="Animation_a8f86"]
-resource_name = "idle_back"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_1oeod")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [13]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_piuoi"]
-_data = {
-"RESET": SubResource("Animation_0b0j5"),
-"idle": SubResource("Animation_qp0nu"),
-"idle_back": SubResource("Animation_a8f86")
-}
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2fb7x"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xvqv"]
+radius = 15.0333
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 5
 script = ExtResource("1_jp4mh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.54747e-13, -1.19209e-07)
 scale = Vector2(4.4375, 4.40625)
 sprite_frames = SubResource("SpriteFrames_qna8r")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_mch4g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1, -2)
-scale = Vector2(5.82617, 5.43457)
-texture = ExtResource("3_1oeod")
-hframes = 9
-vframes = 13
-frame = 45
+[node name="Attack_range" type="Area2D" parent="."]
+collision_mask = 6
+script = ExtResource("4_2k25t")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_piuoi")
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range"]
+position = Vector2(18, 3)
+shape = SubResource("CircleShape2D_8xvqv")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_2fb7x")
-anim_player = NodePath("../AnimationPlayer")
+[connection signal="body_shape_entered" from="Attack_range" to="Attack_range" method="_on_body_shape_entered"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmrfovsogbxjj"]
+[gd_scene load_steps=3 format=3 uid="uid://c42dwhev8ggep"]
 
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/SwordMan.tscn" id="1_knkpi"]
-[ext_resource type="PackedScene" uid="uid://dool0dihd5irg" path="res://player.tscn" id="2_k8rwb"]
+[ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://player.tscn" id="2_k8rwb"]
 
 [node name="test_dudes scene" type="Node2D"]
 position = Vector2(-1, -2)
@@ -20,3 +20,5 @@ zoom = Vector2(2.18, 2.18)
 
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
 position = Vector2(151, -56)
+_health = 20
+_max_health = 20
