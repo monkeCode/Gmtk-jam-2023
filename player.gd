@@ -1,6 +1,7 @@
 extends Damageable
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var attack_range = $Attack_range
 
 const SPEED = 300.0
 
@@ -19,9 +20,11 @@ func _physics_process(delta):
 func handle_atk():
 	if Input.is_action_pressed("ui_select"):
 		attack_flag=1
+		attack_range.monitoring=true
 		animated_sprite_2d.play("attack")
 		await animated_sprite_2d.animation_finished
 		attack_flag=0
+		attack_range.monitoring=false
 	
 func handle_move():
 	var direction_x = Input.get_axis("ui_left", "ui_right")
