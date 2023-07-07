@@ -1,5 +1,7 @@
 extends Damageable
 
+class_name Player
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var attack_range = $Attack_range
 
@@ -10,6 +12,7 @@ var front=1
 var attack_flag=0
 var timer
 
+signal facing_direction_changed(facing_right:bool)
 
 func _physics_process(delta):
 	handle_move()
@@ -54,6 +57,7 @@ func handle_animation():
 				front=0
 		else:
 			animated_sprite_2d.flip_h=(velocity.x<0)
+			emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h)
 			front=1
 			animated_sprite_2d.play("run-horizontal")
 
