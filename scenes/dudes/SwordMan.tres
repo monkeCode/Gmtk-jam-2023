@@ -806,7 +806,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_blxr6")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_backside",
 "speed": 5.0
 }, {
@@ -859,7 +859,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_og127")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_normal",
 "speed": 5.0
 }, {
@@ -876,7 +876,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms0cf")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_backside",
 "speed": 5.0
 }, {
@@ -893,7 +893,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5dmjb")
 }],
-"loop": true,
+"loop": false,
 "name": &"move_normal",
 "speed": 5.0
 }, {

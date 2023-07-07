@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Jam"
-run/main_scene="res://scenes/mainScene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +19,6 @@ config/icon="res://icon.svg"
 2d_physics/layer_1="player"
 2d_physics/layer_2="entity"
 2d_physics/layer_3="ground"
-2d_physics/layer_4="effects"
 
 [rendering]
 

@@ -11,10 +11,24 @@ enum State{
 	Take_damage
 	}
 
+@export_category("Stats")
+
 @export 
 var speed:float = 0
 @export 
 var damage:int = 0
+
+@export_category("abilities")
+
+@export var ability_1_cooldown:float = 0
+@export var ability_1_chance: int = 10
+
+@export var ability_2_cooldown:float = 0
+@export var ability_2_chance: int = 10
+
+var can_ability_1 = true
+var can_ability_2 = true
+
 
 @export
 var atk_distance:float = 0
@@ -79,13 +93,33 @@ func ability_1(target):
 	can_change_state = false
 	play_anim("ability_1")
 	await animator.animation_finished
+	release_ability_1(target)
 	can_change_state = true
+	cooldown_ability_1()
+	
+func release_ability_1(target):
+	pass
+	
+func release_ability_2(target):
+	pass
 	
 func ability_2(target):
 	can_change_state = false
 	play_anim("ability_2")
 	await animator.animation_finished
+	release_ability_2(target)
 	can_change_state = true
+	cooldown_ability_2()
+
+func cooldown_ability_1():
+	can_ability_1 = false
+	await get_tree().create_timer(ability_1_cooldown).timeout
+	can_ability_1 = true
+
+func cooldown_ability_2():
+	can_ability_2 = false
+	await get_tree().create_timer(ability_2_cooldown).timeout
+	can_ability_2 = true
 
 func thinking():
 	if ability_1_condition():
@@ -103,20 +137,29 @@ func thinking():
 	
 	
 func ability_1_condition():
-	return false
+	return can_ability_1 and ability_1_custom_condition() and get_chance()<=ability_1_chance
+
+func ability_1_custom_condition():
+	return true
 	
 func ability_2_condition():
-	return false
+	return can_ability_2 and ability_2_custom_condition() and get_chance()<=ability_2_chance
+
+func ability_2_custom_condition():
+	return true
 	
 func play_anim(anim_name):
 	if is_normal:
 		animator.play(anim_name + "_normal")
 	else:
 		animator.play(anim_name +"_backside")
+		if(animator.animation == "default"):
+			animator.play(anim_name + "_normal")
 		
 func take_damage(dmg):
 	can_change_state = false
 	state = State.Take_damage
+	play_anim("take_damage")
 	super.take_damage(dmg)
 
 func _die():
@@ -125,3 +168,7 @@ func _die():
 	play_anim("die")
 	await animator.animation_finished
 	queue_free()
+
+func get_chance():
+	return randi() % 100 + 1
+

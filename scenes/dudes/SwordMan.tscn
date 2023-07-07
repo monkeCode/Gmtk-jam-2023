@@ -10,11 +10,20 @@ size = Vector2(9, 12)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_vl7k8")
+speed = 100.0
+damage = 10
+ability_1_cooldown = 30.0
+ability_1_chance = 1
+ability_2_cooldown = 10.0
+ability_2_chance = 5
+atk_distance = 20.0
+_health = 10
+_max_health = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = ExtResource("2_jhlrh")
-animation = &"ability_1_backside"
+animation = &"ability_2_normal"
 autoplay = "idle_normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

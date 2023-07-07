@@ -7,16 +7,11 @@
 position = Vector2(-1, -2)
 
 [node name="SwordMan" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_knkpi")]
-speed = 100.0
-damage = 10
-atk_distance = 20.0
 target = NodePath("../Player")
-_health = 10
-_max_health = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(198, -17)
 zoom = Vector2(2.18, 2.18)
 
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
-position = Vector2(151, -56)
+position = Vector2(152, -56)
