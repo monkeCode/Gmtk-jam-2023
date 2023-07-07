@@ -29,9 +29,9 @@ var damage:int = 0
 var can_ability_1 = true
 var can_ability_2 = true
 
-
 @export
 var atk_distance:float = 0
+
 @export
 var target:Damageable = null
 
@@ -153,19 +153,21 @@ func play_anim(anim_name):
 		animator.play(anim_name + "_normal")
 	else:
 		animator.play(anim_name +"_backside")
-		if(animator.animation == "default"):
+		if(animator.animation != anim_name + "_backside"):
 			animator.play(anim_name + "_normal")
 		
 func take_damage(dmg):
+	if get_health() <=0:
+		return
 	can_change_state = false
 	state = State.Take_damage
 	play_anim("take_damage")
 	super.take_damage(dmg)
 
 func _die():
+	play_anim("die")
 	can_change_state = false
 	state = State.Die
-	play_anim("die")
 	await animator.animation_finished
 	queue_free()
 

@@ -8,6 +8,7 @@ position = Vector2(-1, -2)
 
 [node name="SwordMan" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_knkpi")]
 target = NodePath("../Player")
+_health = 150
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(198, -17)
