@@ -9,10 +9,11 @@ const SPEED = 300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var front=1
+var horizontal_direction=1
 var attack_flag=0
 var timer
 
-signal facing_direction_changed(facing_right:bool)
+signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bool)
 
 func _physics_process(delta):
 	handle_move()
@@ -24,7 +25,10 @@ func handle_atk():
 	if Input.is_action_pressed("ui_select"):
 		attack_flag=1
 		attack_range.monitoring=true
-		animated_sprite_2d.play("attack")
+		if horizontal_direction==0 and front==0:
+			animated_sprite_2d.play("attack_back")
+		else:
+			animated_sprite_2d.play("attack")
 		await animated_sprite_2d.animation_finished
 		attack_flag=0
 		attack_range.monitoring=false
@@ -52,14 +56,19 @@ func handle_animation():
 			elif velocity.y>0:
 				animated_sprite_2d.play("run-front")
 				front=1
+				horizontal_direction=0
+				emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 			else:
 				animated_sprite_2d.play("run-back")
 				front=0
+				horizontal_direction=0
+				emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 		else:
 			animated_sprite_2d.flip_h=(velocity.x<0)
-			emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h)
+			emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 			front=1
 			animated_sprite_2d.play("run-horizontal")
+			horizontal_direction=1
 
 
 	

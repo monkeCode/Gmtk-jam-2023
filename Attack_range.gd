@@ -15,9 +15,15 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 		body.take_damage(damage)
 		print("took damage")
 		
-func _direction_changer(facing_right:bool):
-	if (facing_right):
-		facing_shape.position = facing_shape.facing_right_position
+func _direction_changer(facing_right:bool, facing_front:bool, hor_dir:bool):
+	if (hor_dir):
+		if (facing_right):
+			facing_shape.position = facing_shape.facing_right_position
+		else:
+			facing_shape.position = facing_shape.facing_left_position
 	else:
-		facing_shape.position = facing_shape.facing_left_position
+		if (facing_front):
+			facing_shape.position = facing_shape.facing_down_position
+		else:
+			facing_shape.position = facing_shape.facing_up_position
 	
