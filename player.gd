@@ -19,7 +19,10 @@ func _physics_process(delta):
 func handle_atk():
 	if Input.is_action_pressed("ui_select"):
 		attack_flag=1
-		
+		animated_sprite_2d.play("attack")
+		await animated_sprite_2d.animation_finished
+		attack_flag=0
+	
 func handle_move():
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
@@ -33,10 +36,6 @@ func handle_move():
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 func handle_animation():
-	if attack_flag==1:
-		animated_sprite_2d.play("attack")
-		await animated_sprite_2d.animation_finished
-		attack_flag=0
 	if attack_flag==0:
 		if velocity.x==0:
 			if velocity.y==0:
@@ -55,7 +54,6 @@ func handle_animation():
 			front=1
 			animated_sprite_2d.play("run-horizontal")
 
-		
 
 	
 	
