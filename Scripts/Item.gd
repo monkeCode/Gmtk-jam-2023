@@ -10,7 +10,6 @@ class_name Item
 
 @export var manacost : int
 
-var image_ref
 
 func use_item():
 	pass
