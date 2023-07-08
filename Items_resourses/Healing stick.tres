@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="HealingStick" load_steps=3 format=3 uid="uid://c2kd3chv1bpru"]
+[gd_resource type="Resource" script_class="HealingStick" load_steps=4 format=3 uid="uid://c2kd3chv1bpru"]
 
 [ext_resource type="Script" path="res://Scripts/Items/HealingStick.gd" id="1_plk75"]
-[ext_resource type="Texture2D" uid="uid://c866cle1gm4vn" path="res://Assets/items/items_texture.tres" id="2_0t6qe"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_smas7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh7qu"]
+atlas = ExtResource("2_smas7")
+region = Rect2(480, 384, 32, 32)
 
 [resource]
 script = ExtResource("1_plk75")
 heals = 20
 name = "Healing stick"
 description = "Heals you 20 HP."
-texture = ExtResource("2_0t6qe")
+texture = SubResource("AtlasTexture_bh7qu")
 cooldown = 20.0
 manacost = 0

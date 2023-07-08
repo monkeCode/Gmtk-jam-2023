@@ -13,6 +13,8 @@ signal item_used(item_num, item)
 var item_1_can_use = true
 var item_2_can_use = true
 
+var damage_resist = 0
+
 enum State{
 	Move,
 	Idle,
@@ -136,7 +138,7 @@ func take_damage(dmg):
 		animated_sprite_2d.play("took_damage_back")
 	else:
 		animated_sprite_2d.play("took_damage")
-	super.take_damage(dmg)
+	super.take_damage(max(dmg- damage_resist, 0))
 	await animated_sprite_2d.animation_finished
 	can_change_state=true
 

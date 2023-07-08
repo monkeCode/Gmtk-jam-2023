@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0kon1sk7j6t1"]
 
 [ext_resource type="Script" path="res://scenes/UI/item_choose.gd" id="1_2k30q"]
-[ext_resource type="Resource" uid="uid://dw45xhvoqjqua" path="res://Assets/items/HealingThing.tres" id="3_5qkck"]
+[ext_resource type="Resource" uid="uid://c2kd3chv1bpru" path="res://Items_resourses/Healing stick.tres" id="3_5qkck"]
 
 [node name="ItemChoose" type="PanelContainer"]
 offset_right = 40.0
