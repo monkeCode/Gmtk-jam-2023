@@ -3,6 +3,7 @@ extends Damageable
 class_name Player
 
 @export var speed = 300.0
+@export var friction = 200.0
 
 enum State{
 	Move,
@@ -22,27 +23,26 @@ var can_change_state = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var front=1
 var horizontal_direction=1
-var dmg_flag=0
-var attack_flag=0
-var timer
 
 signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bool)
 
 func _physics_process(delta):
+	velocity.x = move_toward(velocity.x, 0, friction*delta)
+	velocity.y = move_toward(velocity.y, 0, friction*delta)
 	if can_change_state:
 		thinking()
-		print(state)
-		match state:
-			State.Move:
-				handle_move()
-				move_and_slide()
-			State.Atk:
-				handle_atk()
-			State.Idle:
-				if front==1:
-					animated_sprite_2d.play("idle-front")
-				else:
-					animated_sprite_2d.play("idle-back")
+	print(state)
+	match state:
+		State.Move:
+			handle_move(delta)
+		State.Atk:
+			handle_atk()
+		State.Idle:
+			if front==1:
+				animated_sprite_2d.play("idle-front")
+			else:
+				animated_sprite_2d.play("idle-back")
+	move_and_slide()
 
 func handle_atk():
 	can_change_state=false
@@ -51,39 +51,41 @@ func handle_atk():
 		animated_sprite_2d.play("attack_back")
 	else:
 		animated_sprite_2d.play("attack")
+	var direction_x = Input.get_axis("ui_left", "ui_right")
+	if direction_x:
+		velocity.x = direction_x * speed * 2
+		print(velocity.x)
+	var direction_y = Input.get_axis("ui_up", "ui_down")
+	if direction_y:
+		velocity.y = direction_y * speed * 2
 	await animated_sprite_2d.animation_finished
 	attack_range.monitoring=false
 	can_change_state=true
 
+	
 # ПИЗДЕЦ
-func handle_move():
+func handle_move(delta):
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = direction_x * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
 	var direction_y = Input.get_axis("ui_up", "ui_down")
 	if direction_y:
 		velocity.y = direction_y * speed
-	else:
-		velocity.y = move_toward(velocity.y, 0, speed)
-	if velocity.x==0:
-		if velocity.y>0:
+	if direction_x==0:
+		if direction_y>0:
 			animated_sprite_2d.play("run-front")
 			front=1
 			horizontal_direction=0
-			emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 		else:
 			animated_sprite_2d.play("run-back")
 			front=0
 			horizontal_direction=0
-			emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 	else:
 		animated_sprite_2d.flip_h=(velocity.x<0)
-		emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 		front=1
 		animated_sprite_2d.play("run-horizontal")
 		horizontal_direction=1
+	emit_signal("facing_direction_changed", !animated_sprite_2d.flip_h, front, horizontal_direction)
 
 func thinking():
 	if Input.is_action_pressed("ui_accept"):
@@ -115,6 +117,3 @@ func _die():
 	queue_free()
 
 
-	
-	
-	
