@@ -23,6 +23,10 @@ func release_ability_2(target):
 	b.timer*=randf_range(1,3)
 	get_tree().get_root().get_child(0).add_child(b)
 
+func ability_1_custom_condition():
+	return (target.position-position).length() > atk_distance
+
+
 func _die():
 	play_anim("die")
 	can_change_state = false
@@ -32,7 +36,7 @@ func _die():
 		if animator.frame == 15:
 			if(target.position-position).length() <= atk_distance*1.5:
 				target.take_damage(damage*2)
-				target.velocity += (target.position-position) * 20
+				target.velocity += (target.position-position).normalized() * 20
 			break
 	await animator.animation_finished
 	queue_free()

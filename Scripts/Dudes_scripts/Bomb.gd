@@ -50,8 +50,13 @@ func _physics_process(delta):
 
 func explose():
 	animated.play("explode")
+	while true:
+		await animated.frame_changed
+		if animated.frame == 7:
+			for b in bodies:
+				b.take_damage(damage)
+				b.velocity += (b.position-position).normalized() * push_force
+			break
 	await animated.animation_finished
-	for b in bodies:
-		b.take_damage(damage)
 	queue_free()
 	
