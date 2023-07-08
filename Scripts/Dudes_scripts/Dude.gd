@@ -57,7 +57,7 @@ func _process(delta):
 		thinking()
 		match state:
 			State.Move:
-				move(target.position)
+				move(target.position, delta)
 				move_and_slide()
 			State.Atk:
 				attack(target)
@@ -70,9 +70,9 @@ func _process(delta):
 	sprite.flip_h = velocity.x < 0
 	
 
-func move(point):
+func move(point, delta):
 	var dir = (point - position).normalized()
-	velocity = dir * speed
+	velocity += dir * speed * delta
 	is_normal = velocity.y > 0
 	play_anim("move")
 	

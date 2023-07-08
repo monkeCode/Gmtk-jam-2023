@@ -21,7 +21,7 @@ func ability_2_custom_condition():
 
 func release_ability_1(target):
 	for i in range(0, root_count):
-		var p = Vector2(randf_range(-1,1),  randf_range(-1,1)).normalized()
+		var p = Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 		var it = root.instantiate()
 		it.position = target.position + p * root_radius
 		get_parent().add_child(it)
@@ -33,10 +33,11 @@ func release_ability_2(target):
 	speed*=boost_speed
 	await get_tree().create_timer(best_timer).timeout
 	is_human = true
-	can_change_state = false
-	animator.play("to_human")
-	await animator.animation_finished
-	can_change_state = true
+	if get_health() >=0:
+		can_change_state = false
+		animator.play("to_human")
+		await animator.animation_finished
+		can_change_state = true
 
 func play_anim(anim):
 	if is_human or anim == "die":

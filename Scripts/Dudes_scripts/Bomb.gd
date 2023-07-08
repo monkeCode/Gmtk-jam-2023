@@ -14,11 +14,13 @@ var throwed: bool= false
 var is_explosed = false
 var last_pos = position
 var x_total = 0
+
 func init():
 	super.init()
 
 func throw():
 	throwed = true
+	animated.play("fly")
 	
 func _physics_process(delta):
 	if throwed:
@@ -35,7 +37,7 @@ func _physics_process(delta):
 		is_explosed = true
 		explose()
 	calculate_pos()
-	rotation = Vector2.RIGHT.angle_to(position-last_pos)
+	rotation = Vector2.RIGHT.angle_to(position - last_pos)
 
 
 func explose():
