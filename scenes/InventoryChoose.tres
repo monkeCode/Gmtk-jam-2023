@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=8 format=3 uid="uid://c62o74d4kvyfp"]
+
+[ext_resource type="Resource" uid="uid://cp6imauroxgro" path="res://Assets/items/MagicShield.tres" id="1_52xvq"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_x82wx"]
+[ext_resource type="Resource" uid="uid://dw45xhvoqjqua" path="res://Assets/items/HealingThing.tres" id="2_scrvw"]
+[ext_resource type="Resource" uid="uid://bf1ocwslx2h1a" path="res://Assets/items/BigSword.tres" id="3_sqygs"]
+[ext_resource type="Resource" uid="uid://difbvj7ndxed4" path="res://Assets/items/SavingAmulet.tres" id="4_dej7h"]
+[ext_resource type="Resource" uid="uid://di1665c5vlkhy" path="res://Assets/items/StinkyFish.tres" id="5_rk43y"]
+[ext_resource type="Resource" uid="uid://drlv5nn3h0i8l" path="res://Assets/items/Treasure.tres" id="6_i111m"]
+
+[resource]
+script = ExtResource("1_x82wx")
+items = Array[Resource("res://Scripts/Item.gd")]([ExtResource("1_52xvq"), ExtResource("2_scrvw"), ExtResource("3_sqygs"), ExtResource("4_dej7h"), ExtResource("5_rk43y"), ExtResource("6_i111m")])
