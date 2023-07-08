@@ -6,6 +6,7 @@
 custom_minimum_size = Vector2(128, 128)
 offset_right = 40.0
 offset_bottom = 40.0
+toggle_mode = true
 script = ExtResource("1_cuiub")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://di1665c5vlkhy"]
+
+[ext_resource type="Script" path="res://Scripts/Item.gd" id="1_2ctbo"]
+
+[resource]
+script = ExtResource("1_2ctbo")
+name = ""
+description = ""
+cooldown = 0.0
+manacost = 0
