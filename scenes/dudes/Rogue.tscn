@@ -1,8 +1,7 @@
-[gd_scene load_steps=145 format=3 uid="uid://dlbkxg8gvrl5d"]
+[gd_scene load_steps=144 format=3 uid="uid://dlbkxg8gvrl5d"]
 
 [ext_resource type="Texture2D" uid="uid://q6v5pp3vwx7j" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Shurikens/Minifantasy_TrueHeroesRogueShurikens.png" id="1_0hf3h"]
 [ext_resource type="Texture2D" uid="uid://clqlremeqhusn" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/General_Animations/Minifantasy_TrueHeroesRogueIdle.png" id="1_1xdj5"]
-[ext_resource type="Script" path="res://Scripts/Dudes_scripts/Rogue.gd" id="1_carvp"]
 [ext_resource type="Texture2D" uid="uid://bo4pouxctyxbb" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/General_Animations/Minifantasy_TrueHeroesRogueAttack.png" id="1_ci6dq"]
 [ext_resource type="Texture2D" uid="uid://gjakgsdpq58" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueThrowBomb.png" id="2_7d6sl"]
 [ext_resource type="Texture2D" uid="uid://dk68w504kblww" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/General_Animations/Minifantasy_TrueHeroesRogueWalk.png" id="2_n48pn"]
@@ -1021,21 +1020,13 @@ size = Vector2(7, 9)
 [node name="Rogue" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_carvp")
-speed = 120.0
-damage = 10
-ability_1_cooldown = 30.0
-ability_1_chance = 1
-ability_2_cooldown = 7.0
-ability_2_chance = 1
-atk_distance = 20.0
-_health = 10
-_max_health = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jtd2k")
-animation = &"die_normal"
+animation = &"ability_2_backside"
 autoplay = "idle_normal"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1.5)

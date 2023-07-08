@@ -36,6 +36,9 @@ func _physics_process(delta):
 		return
 	calculate_pos()
 
+	
+
+
 func calculate_pos():
 	var percent = x/time
 	var x_pos = percent * PI

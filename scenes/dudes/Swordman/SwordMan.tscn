@@ -23,7 +23,7 @@ _max_health = 10
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = ExtResource("2_oy0jl")
-animation = &"move_normal"
+animation = &"ability_2_normal"
 autoplay = "idle_normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

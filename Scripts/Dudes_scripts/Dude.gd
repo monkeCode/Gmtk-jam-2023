@@ -59,7 +59,6 @@ func _process(delta):
 		match state:
 			State.Move:
 				move(target.position, delta)
-				
 			State.Atk:
 				attack(target)
 			State.Ability_1:
@@ -74,7 +73,7 @@ func _process(delta):
 
 func move(point, delta):
 	var dir = (point - position).normalized()
-	velocity = dir * speed
+	velocity += dir * speed * delta
 	is_normal = velocity.y > 0
 	play_anim("move")
 	

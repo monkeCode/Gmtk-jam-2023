@@ -7,8 +7,6 @@ class_name Bomb
 
 @export var timer:float = 5
 
-@export var push_force:float = 20
-
 @onready var animated:AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -25,9 +23,9 @@ func throw():
 	animated.play("fly")
 	
 func _physics_process(delta):
-	x_total+=delta
 	if throwed:
 		x+=delta
+		x_total+=delta
 		if x > time:
 			bounce_count -=1
 			if bounce_count > 0:
@@ -35,28 +33,18 @@ func _physics_process(delta):
 				height_coef *= bounce_coef
 				init()
 				x = 0
-			else:
-				animated.play("idle")
-				throwed = false
-				rotation = 0
-				return
-		rotation = Vector2.RIGHT.angle_to(position - last_pos)
-		calculate_pos()
 	if x_total >= timer and !is_explosed:
 		is_explosed = true
 		explose()
-	
+	calculate_pos()
+	rotation = Vector2.RIGHT.angle_to(position - last_pos)
 
 
 func explose():
 	animated.play("explode")
-	while true:
-		await animated.frame_changed
-		if animated.frame == 7:
-			for b in bodies:
-				b.take_damage(damage)
-				b.velocity += (b.position-position).normalized() * push_force
-			break
 	await animated.animation_finished
-	queue_free()
+	for b in bodies:
+		b.take_damage(damage)
+		queue_free()
+		return
 	

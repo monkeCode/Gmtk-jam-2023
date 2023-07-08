@@ -1462,7 +1462,7 @@ atk_distance = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jiv0v")
-animation = &"take_damage_beast_backside"
+animation = &"ability_1_backside"
 autoplay = "idle_normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
