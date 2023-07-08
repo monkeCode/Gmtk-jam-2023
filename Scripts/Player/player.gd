@@ -61,7 +61,6 @@ func handle_atk():
 	await animated_sprite_2d.animation_finished
 	attack_range.monitoring=false
 	can_change_state=true
-
 	
 # ПИЗДЕЦ
 func handle_move(delta):
