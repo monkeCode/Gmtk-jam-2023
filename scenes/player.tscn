@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chfglvio37j7c" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenAnimations.png" id="3_1oeod"]
 [ext_resource type="Script" path="res://Scripts/Player/Attack_range.gd" id="4_m4h3l"]
 [ext_resource type="Script" path="res://Scripts/Player/FacingRightDirectionCollisionShape.gd" id="5_4aw1v"]
-[ext_resource type="PackedScene" path="res://scenes/UI/FigthUI.tscn" id="6_m7oi4"]
+[ext_resource type="PackedScene" uid="uid://dm2vvrqeg77yd" path="res://scenes/UI/FigthUI.tscn" id="6_m7oi4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_do0vd"]
 atlas = ExtResource("3_1oeod")
@@ -465,4 +465,5 @@ offset_bottom = 246.0
 layout_mode = 1
 
 [connection signal="hp_changed" from="." to="Camera2D/Control/FigthUI" method="_on_hp_changed"]
+[connection signal="item_used" from="." to="Camera2D/Control/FigthUI" method="_on_player_item_used"]
 [connection signal="body_shape_entered" from="Attack_range" to="Attack_range" method="_on_body_shape_entered"]

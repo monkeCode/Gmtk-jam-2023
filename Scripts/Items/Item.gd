@@ -11,7 +11,7 @@ class_name Item
 @export var manacost : int
 
 
-func use_item():
+func use_item(caster):
 	pass
 
 func _process(delta):

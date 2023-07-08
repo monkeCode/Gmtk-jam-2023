@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=4 format=3 uid="uid://c62o74d4kvyfp"]
-
-[ext_resource type="Resource" uid="uid://cp6imauroxgro" path="res://Assets/items/MagicShield.tres" id="1_52xvq"]
-[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_x82wx"]
-[ext_resource type="Resource" uid="uid://dw45xhvoqjqua" path="res://Assets/items/HealingThing.tres" id="2_scrvw"]
-
-[resource]
-script = ExtResource("1_x82wx")
-items = Array[Resource("res://Scripts/Item.gd")]([ExtResource("1_52xvq"), ExtResource("2_scrvw"), null, null, null, null])

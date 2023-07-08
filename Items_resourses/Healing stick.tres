@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealingStick" load_steps=3 format=3 uid="uid://c2kd3chv1bpru"]
+
+[ext_resource type="Script" path="res://Scripts/Items/HealingStick.gd" id="1_plk75"]
+[ext_resource type="Texture2D" uid="uid://c866cle1gm4vn" path="res://Assets/items/items_texture.tres" id="2_0t6qe"]
+
+[resource]
+script = ExtResource("1_plk75")
+heals = 20
+name = "Healing stick"
+description = "Heals you 20 HP."
+texture = ExtResource("2_0t6qe")
+cooldown = 20.0
+manacost = 0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmrfovsogbxjj"]
+[gd_scene load_steps=6 format=3 uid="uid://dmrfovsogbxjj"]
 
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="1_knkpi"]
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="2_k8rwb"]
+[ext_resource type="Resource" uid="uid://c2kd3chv1bpru" path="res://Items_resourses/Healing stick.tres" id="3_i05l3"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="3_vl75r"]
 [ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="4_tv235"]
 
@@ -14,6 +15,7 @@ _health = 150
 
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
 position = Vector2(152, -56)
+item_1 = ExtResource("3_i05l3")
 
 [node name="Druid" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_vl75r")]
 position = Vector2(70, 21)

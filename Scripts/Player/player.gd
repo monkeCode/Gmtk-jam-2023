@@ -2,10 +2,16 @@ extends Damageable
 
 class_name Player
 
-signal item_used(int,Item)
+signal item_used(item_num, item)
 
 @export var speed = 300.0
 @export var friction = 200.0
+
+@export var item_1:Item
+@export var item_2:Item
+
+var item_1_can_use = true
+var item_2_can_use = true
 
 enum State{
 	Move,
@@ -31,6 +37,8 @@ signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bo
 func _physics_process(delta):
 	velocity.x = move_toward(velocity.x, 0, friction*delta)
 	velocity.y = move_toward(velocity.y, 0, friction*delta)
+	if get_health() > 0:
+		process_items()
 	if can_change_state:
 		thinking()
 	match state:
@@ -44,6 +52,29 @@ func _physics_process(delta):
 			else:
 				animated_sprite_2d.play("idle-back")
 	move_and_slide()
+
+
+func cd_item_1():
+	item_1_can_use =false
+	await get_tree().create_timer(item_1.cooldown).timeout
+	item_1_can_use = true
+
+func cd_item_2():
+	item_2_can_use =false
+	await get_tree().create_timer(item_2.cooldown).timeout
+	item_2_can_use = true
+
+func process_items():
+	if Input.is_action_pressed("use_item_1") and item_1_can_use:
+		item_1.use_item(self)
+		item_used.emit(0, item_1)
+		cd_item_1()
+		return
+	if Input.is_action_pressed('use_item_2') and item_2_can_use:
+		item_2.use_item(self)
+		item_used.emit(1, item_2)
+		cd_item_2()
+
 
 func handle_atk():
 	can_change_state=false
