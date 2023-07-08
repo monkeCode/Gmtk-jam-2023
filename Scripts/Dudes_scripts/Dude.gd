@@ -50,6 +50,7 @@ func _ready():
 	animator = $AnimatedSprite2D
 	sprite = $AnimatedSprite2D
 
+
 func _process(delta):
 		
 	if can_change_state:

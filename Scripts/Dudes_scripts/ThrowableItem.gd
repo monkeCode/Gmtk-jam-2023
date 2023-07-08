@@ -18,13 +18,17 @@ var time:float = 0
 var move_vec
 
 func _ready():
+	init()
+	
+
+func init():
 	start_pos = position
 	move_vec = point - position
 	time = move_vec.length()/ speed
-	
 
 func _physics_process(delta):
 	x+=delta
+	rotation = 2*PI * x/time * 5
 	if x > time:
 		for b in bodies:
 			b.take_damage(damage)
@@ -32,9 +36,11 @@ func _physics_process(delta):
 		return
 	calculate_pos()
 
+	
+
+
 func calculate_pos():
 	var percent = x/time
-	rotation = 2*PI * percent * 5
 	var x_pos = percent * PI
 	var y_pos = -height_coef * sin(x_pos)
 	
