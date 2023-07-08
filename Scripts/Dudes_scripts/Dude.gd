@@ -73,7 +73,7 @@ func _process(delta):
 
 func move(point, delta):
 	var dir = (point - position).normalized()
-	velocity += dir * speed * delta
+	velocity = dir * speed
 	is_normal = velocity.y > 0
 	play_anim("move")
 	

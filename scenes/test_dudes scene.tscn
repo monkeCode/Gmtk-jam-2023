@@ -23,5 +23,6 @@ target = NodePath("../Player")
 _health = 50
 _max_health = 50
 
-[node name="Rogue" parent="." instance=ExtResource("4_tv235")]
+[node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_tv235")]
 position = Vector2(251, -61)
+target = NodePath("../Player")
