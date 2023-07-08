@@ -66,10 +66,7 @@ func _process(delta):
 			State.Ability_2:
 				ability_2(target)
 			State.Idle:
-				if is_normal:
-					animator.play("idle_normal")
-				else:
-					animator.play("idle_backside")
+				play_anim("idle")
 	sprite.flip_h = velocity.x < 0
 	
 
