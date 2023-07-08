@@ -24,7 +24,7 @@ func _ready():
 func init():
 	start_pos = position
 	move_vec = point - position
-	time = move_vec.length()/ speed
+	time = move_vec.length() / speed
 
 func _physics_process(delta):
 	x+=delta
