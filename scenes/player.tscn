@@ -465,5 +465,6 @@ offset_bottom = 246.0
 layout_mode = 1
 
 [connection signal="hp_changed" from="." to="Camera2D/Control/FigthUI" method="_on_hp_changed"]
+[connection signal="item_changed" from="." to="Camera2D/Control/FigthUI" method="_on_player_item_changed"]
 [connection signal="item_used" from="." to="Camera2D/Control/FigthUI" method="_on_player_item_used"]
 [connection signal="body_shape_entered" from="Attack_range" to="Attack_range" method="_on_body_shape_entered"]
