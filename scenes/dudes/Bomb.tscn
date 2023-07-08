@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://jhvvnvo3v807"]
+[gd_scene load_steps=23 format=3 uid="uid://jhvvnvo3v807"]
 
 [ext_resource type="Script" path="res://Scripts/Dudes_scripts/Bomb.gd" id="1_3w8wq"]
 [ext_resource type="Texture2D" uid="uid://djt0t77cdmtw" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombProjectileFrame1.png" id="1_fqgvb"]
 [ext_resource type="Texture2D" uid="uid://btg7qahncaepi" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombExplosion.png" id="1_ograg"]
 [ext_resource type="Texture2D" uid="uid://5kc67jfs8nh3" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombProjectileFrame2.png" id="2_qsagw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lylqy"]
+radius = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ornuk"]
 atlas = ExtResource("1_ograg")
@@ -136,14 +139,22 @@ script = ExtResource("1_3w8wq")
 speed = 100.0
 height_coef = 10.0
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_lylqy")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_74wvu")
 animation = &"explode"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 256
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_43m4n")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

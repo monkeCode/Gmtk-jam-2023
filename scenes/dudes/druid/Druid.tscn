@@ -1450,7 +1450,6 @@ size = Vector2(10, 9)
 
 [node name="Druid" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 4
 script = ExtResource("1_e7eg3")
 speed = 60.0
 damage = 5
@@ -1459,6 +1458,8 @@ ability_1_chance = 5
 ability_2_cooldown = 60.0
 ability_2_chance = 1
 atk_distance = 20.0
+_health = 40
+_max_health = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jiv0v")
