@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://2v86oip2i0a1"]
+
+[ext_resource type="Texture2D" uid="uid://gm404wvnyg4w" path="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/Minifantasy_GuiIcons.png" id="1_0olue"]
+
+[resource]
+atlas = ExtResource("1_0olue")
+region = Rect2(40, 56, 8, 8)
