@@ -133,6 +133,7 @@ autoplay = "pre_atk"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_lyo4p")

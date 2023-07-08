@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgsu5jxw8ybun"]
+[gd_scene load_steps=16 format=3 uid="uid://p3tmiucuoe5q"]
 
 [ext_resource type="Texture2D" uid="uid://bh4xedb1tcwk6" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonFloorTiles.png" id="1_us0h4"]
 [ext_resource type="Texture2D" uid="uid://c1y1bqeh8mp8v" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonWallTiles.png" id="2_syrrf"]
 [ext_resource type="Texture2D" uid="uid://vlf3gsyd0s7k" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonDoorTiles.png" id="3_k7qqd"]
 [ext_resource type="Texture2D" uid="uid://bam7x346mk638" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonCliffTiles.png" id="4_ucjbb"]
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="5_ea465"]
+[ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="6_0brlh"]
+[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="7_k5pio"]
+[ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="8_csxqr"]
+[ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="9_khtr1"]
+[ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="10_brslk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
 texture = ExtResource("1_us0h4")
@@ -320,7 +325,7 @@ sources/4 = SubResource("TileSetAtlasSource_mac6h")
 
 [node name="Arena" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["ground"]]
 tile_set = SubResource("TileSet_ddn0e")
 cell_quadrant_size = 8
 format = 2
@@ -329,3 +334,21 @@ layer_0/tile_data = PackedInt32Array(0, 0, 1, 65536, 0, 1, 131072, 0, 1, 196608,
 
 [node name="Player" parent="." instance=ExtResource("5_ea465")]
 position = Vector2(456, 248)
+collision_layer = 256
+item_1 = ExtResource("6_0brlh")
+item_2 = ExtResource("7_k5pio")
+
+[node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
+position = Vector2(642, 363)
+target = NodePath("../Player")
+
+[node name="Druid" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_khtr1")]
+position = Vector2(233, 370)
+target = NodePath("../Player")
+_health = 40
+_max_health = 40
+
+[node name="SwordMan" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_brslk")]
+position = Vector2(766, 253)
+collision_layer = 256
+target = NodePath("../Player")
