@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmrfovsogbxjj"]
 
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="1_knkpi"]
-[ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://player.tscn" id="2_k8rwb"]
+[ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="2_k8rwb"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="3_vl75r"]
 
 [node name="test_dudes scene" type="Node2D"]

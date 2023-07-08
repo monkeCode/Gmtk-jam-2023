@@ -3,6 +3,7 @@ extends Damageable
 class_name Player
 
 @export var speed = 300.0
+
 enum State{
 	Move,
 	Idle,
@@ -53,7 +54,8 @@ func handle_atk():
 	await animated_sprite_2d.animation_finished
 	attack_range.monitoring=false
 	can_change_state=true
-	
+
+# ПИЗДЕЦ
 func handle_move():
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
