@@ -88,7 +88,7 @@ func deal_damage(target):
 	var s_y = sign(vec.y)
 	if vec.length() <= atk_distance:
 		if s_x != int(sprite.flip_h) * 2 - 1 and s_y == int(is_normal) * 2 - 1:
-			target.take_damage(damage)
+			target.take_damage(int(damage * randf_range(0.85,1.15)))
 
 @warning_ignore("shadowed_variable")
 func ability_1(target):
