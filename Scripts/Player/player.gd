@@ -2,6 +2,8 @@ extends Damageable
 
 class_name Player
 
+signal item_used(int,Item)
+
 @export var speed = 300.0
 @export var friction = 200.0
 

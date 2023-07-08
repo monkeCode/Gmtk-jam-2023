@@ -8,8 +8,6 @@ var hp_bar:HSlider
 func _ready():
 	hp_bar = $HSlider
 
-
-
 func _process(delta):
 	pass
 

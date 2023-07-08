@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmrfovsogbxjj"]
+[gd_scene load_steps=5 format=3 uid="uid://dmrfovsogbxjj"]
 
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="1_knkpi"]
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="2_k8rwb"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="3_vl75r"]
+[ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="4_tv235"]
 
 [node name="test_dudes scene" type="Node2D"]
 position = Vector2(-1, -2)
@@ -10,10 +11,6 @@ position = Vector2(-1, -2)
 [node name="SwordMan" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_knkpi")]
 target = NodePath("../Player")
 _health = 150
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(198, -17)
-zoom = Vector2(2.18, 2.18)
 
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
 position = Vector2(152, -56)
@@ -25,3 +22,6 @@ root_radius = 20.0
 target = NodePath("../Player")
 _health = 50
 _max_health = 50
+
+[node name="Rogue" parent="." instance=ExtResource("4_tv235")]
+position = Vector2(251, -61)

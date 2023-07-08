@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqglsqxyu4iws"]
+[gd_scene load_steps=3 format=3 uid="uid://o55b53prdf3b"]
 
-[ext_resource type="PackedScene" uid="uid://2nja85bdcc32" path="res://scenes/UI/item_choose.tscn" id="1_nnsfb"]
+[ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="1_2a5qt"]
+[ext_resource type="PackedScene" uid="uid://b0kon1sk7j6t1" path="res://scenes/UI/item_choose.tscn" id="1_nnsfb"]
 
 [node name="Preporation for battle" type="Control"]
 layout_mode = 3
@@ -24,6 +25,7 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_2a5qt")
 theme_override_font_sizes/font_size = 32
 text = "Choose your weapon!"
 
