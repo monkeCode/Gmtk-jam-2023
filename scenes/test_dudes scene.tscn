@@ -20,5 +20,5 @@ zoom = Vector2(2.18, 2.18)
 
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
 position = Vector2(151, -56)
-_health = 20
+_health = 100
 _max_health = 20
