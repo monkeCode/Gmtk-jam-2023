@@ -20,3 +20,5 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -3,10 +3,9 @@ extends PanelContainer
 const SLOT=preload("res://scenes/UI/slot.tscn")
 
 @onready var grid_container = $MarginContainer/GridContainer
-
+@export var inv_data : Array[Item]
 func _ready() -> void:
-	var inv_data=preload("res://scenes/InventoryChoose.tres")
-	populate_grid(inv_data.items)
+	populate_grid(inv_data)
 
 func populate_grid(items: Array[Item]) -> void:
 	for child in grid_container.get_children():
