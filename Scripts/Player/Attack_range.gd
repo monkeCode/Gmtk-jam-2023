@@ -14,8 +14,8 @@ func _ready():
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is Damageable:
 		body.take_damage(damage)
-		var dir = (player.position - body.position).normalized()
-		body.velocity=dir*3000
+		var dir = (body.position - player.position).normalized()
+		body.velocity += dir * player.velocity.length()
 		print("took damage")
 		
 func _direction_changer(facing_right:bool, facing_front:bool, hor_dir:bool):

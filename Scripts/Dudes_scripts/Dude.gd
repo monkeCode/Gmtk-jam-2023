@@ -58,7 +58,6 @@ func _process(delta):
 		match state:
 			State.Move:
 				move(target.position, delta)
-				move_and_slide()
 			State.Atk:
 				attack(target)
 			State.Ability_1:
@@ -68,6 +67,7 @@ func _process(delta):
 			State.Idle:
 				play_anim("idle")
 	sprite.flip_h = velocity.x < 0
+	move_and_slide()
 	
 
 func move(point, delta):
