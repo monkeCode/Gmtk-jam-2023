@@ -57,7 +57,7 @@ func _process(delta):
 		print(state)
 		match state:
 			State.Move:
-				move(target.position, delta)
+				move(target.position)
 				move_and_slide()
 			State.Atk:
 				attack(target)
@@ -73,7 +73,7 @@ func _process(delta):
 	sprite.flip_h = velocity.x < 0
 	
 
-func move(point, delta):
+func move(point):
 	var dir = (point - position).normalized()
 	velocity = dir * speed
 	is_normal = velocity.y > 0
@@ -89,6 +89,7 @@ func attack(target):
 func deal_damage(target):
 	print_debug("deal_damage")
 
+@warning_ignore("shadowed_variable")
 func ability_1(target):
 	can_change_state = false
 	play_anim("ability_1")
@@ -122,14 +123,15 @@ func cooldown_ability_2():
 	can_ability_2 = true
 
 func thinking():
+	if target == null:
+		state = State.Idle
+		return
 	if ability_1_condition():
 		state = State.Ability_1
 		return
 	if ability_2_condition():
 		state = State.Ability_2
 		return
-	if target == null:
-		state = State.Idle
 	if (target.position - position).length() > atk_distance:
 		state = State.Move
 		return
@@ -157,12 +159,14 @@ func play_anim(anim_name):
 			animator.play(anim_name + "_normal")
 		
 func take_damage(dmg):
-	if get_health() <=0:
+	if get_health() <= 0:
 		return
 	can_change_state = false
 	state = State.Take_damage
 	play_anim("take_damage")
 	super.take_damage(dmg)
+	await animator.animation_finished
+	can_change_state = true
 
 func _die():
 	play_anim("die")

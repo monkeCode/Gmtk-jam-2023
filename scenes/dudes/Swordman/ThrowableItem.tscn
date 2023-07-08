@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmmbw5msj1btl"]
+
+[ext_resource type="Texture2D" uid="uid://bnq2q67jwramu" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Props/Minifantasy_DungeonProps.png" id="1_f1kfp"]
+[ext_resource type="Script" path="res://Scripts/ThrowableItem.gd" id="1_x7glc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ueb4"]
+
+[node name="ThrowableItem" type="Node2D"]
+script = ExtResource("1_x7glc")
+speed = 100.0
+height_coef = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_f1kfp")
+hframes = 29
+vframes = 8
+frame = 17
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0ueb4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
