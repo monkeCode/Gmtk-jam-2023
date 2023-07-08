@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c7rmk7n7bmfwv"
+path="res://.godot/imported/candy_01a.png-dc7b110b3beb7dfb4ccb1c94e5a36c9e.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/dungeon/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/candy_01a.png"
+dest_files=["res://.godot/imported/candy_01a.png-dc7b110b3beb7dfb4ccb1c94e5a36c9e.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

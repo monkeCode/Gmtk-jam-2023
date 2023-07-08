@@ -133,6 +133,8 @@ radius = 15.0
 
 [node name="Bomb" type="Node2D"]
 script = ExtResource("1_3w8wq")
+speed = 100.0
+height_coef = 10.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_74wvu")
