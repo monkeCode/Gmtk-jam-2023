@@ -31,7 +31,6 @@ func _physics_process(delta):
 	velocity.y = move_toward(velocity.y, 0, friction*delta)
 	if can_change_state:
 		thinking()
-	print(state)
 	match state:
 		State.Move:
 			handle_move(delta)

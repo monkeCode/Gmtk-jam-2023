@@ -1,13 +1,19 @@
 extends Control
 class_name FightUI
 
-var hp_bar:Slider
+var hp_bar:HSlider
 
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
-	pass # Replace with function body.
+	hp_bar = $HSlider
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
+
+func _on_hp_changed(last, newHp, max):
+	var val = int(float(newHp)/max * 100)
+	hp_bar.value = val
+	

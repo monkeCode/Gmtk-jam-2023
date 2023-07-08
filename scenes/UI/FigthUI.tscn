@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkke725ghplm"]
+[gd_scene load_steps=4 format=3 uid="uid://bkke725ghplm"]
 
+[ext_resource type="Script" path="res://Scripts/UI/FightUi.gd" id="1_783ye"]
 [ext_resource type="Texture2D" uid="uid://2v86oip2i0a1" path="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/icons.tres" id="1_kprlh"]
+[ext_resource type="Texture2D" uid="uid://dtqlo2m5tktte" path="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/Minifantasy_GuiIcons-export.png" id="3_b75ng"]
 
 [node name="FigthUI" type="Control"]
 layout_mode = 3
@@ -9,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_783ye")
+metadata/_edit_use_anchors_ = true
 
 [node name="item_1" type="TextureRect" parent="."]
 layout_mode = 1
@@ -33,16 +37,17 @@ offset_top = -106.0
 offset_right = 210.0
 offset_bottom = -65.0
 grow_vertical = 0
-texture = ExtResource("1_kprlh")
+texture = ExtResource("3_b75ng")
 stretch_mode = 5
 
 [node name="HSlider" type="HSlider" parent="."]
 modulate = Color(1, 0, 0, 1)
-layout_mode = 0
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 269.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 266.0
+offset_bottom = 33.0
+theme_override_icons/grabber_disabled = ExtResource("3_b75ng")
 value = 100.0
 editable = false
 scrollable = false

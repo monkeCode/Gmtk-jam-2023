@@ -1,7 +1,7 @@
 class_name Damageable
 extends CharacterBody2D
 
-signal hp_changed(last_hp, new_hp)
+signal hp_changed(last_hp, new_hp, max)
 
 signal died
 
@@ -21,7 +21,7 @@ func get_max_health() -> int:
 func heal(value:int) -> void:
 	var last_hp = _health
 	_health = min(get_max_health(), _health+ value)
-	hp_changed.emit(last_hp, _health)
+	hp_changed.emit(last_hp, _health, _max_health)
 	show_text(_health - last_hp, DamagableText.Type.Heal)
 
 func show_text(str, type):
@@ -34,7 +34,7 @@ func show_text(str, type):
 func take_damage(value:int) -> void:
 	var last_hp = _health
 	_health -= value
-	hp_changed.emit(last_hp, max(0, _health))
+	hp_changed.emit(last_hp, max(0, _health), _max_health)
 	show_text(last_hp - _health, DamagableText.Type.Damage)
 	
 	if(_health <=0):

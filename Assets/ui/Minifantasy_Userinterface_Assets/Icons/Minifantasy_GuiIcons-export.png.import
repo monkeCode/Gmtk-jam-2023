@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4mff2ivsgcf"
-path="res://.godot/imported/Minifantasy_GuiIcons.png-22753fa46aa39c17b1052933215b6b89.ctex"
+uid="uid://dtqlo2m5tktte"
+path="res://.godot/imported/Minifantasy_GuiIcons-export.png-9c278ed0678ce38f53c09a1d37966362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/Minifantasy_GuiIcons.png"
-dest_files=["res://.godot/imported/Minifantasy_GuiIcons.png-22753fa46aa39c17b1052933215b6b89.ctex"]
+source_file="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/Minifantasy_GuiIcons-export.png"
+dest_files=["res://.godot/imported/Minifantasy_GuiIcons-export.png-9c278ed0678ce38f53c09a1d37966362.ctex"]
 
 [params]
 
