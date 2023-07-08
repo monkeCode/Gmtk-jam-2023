@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cp6imauroxgro"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cp6imauroxgro"]
 
 [ext_resource type="Script" path="res://Scripts/Item.gd" id="1_i8ra3"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_hu4xw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bucwg"]
+atlas = ExtResource("2_hu4xw")
+region = Rect2(192, 576, 32, 32)
 
 [resource]
 script = ExtResource("1_i8ra3")
-name = ""
-description = ""
-cooldown = 0.0
-manacost = 0
+name = "Magic Shield"
+description = "Gives you full immunity to damage for 1 second."
+texture = SubResource("AtlasTexture_bucwg")
+cooldown = 30.0
+manacost = 50
