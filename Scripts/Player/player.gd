@@ -22,27 +22,25 @@ var can_change_state = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var front=1
 var horizontal_direction=1
-var dmg_flag=0
-var attack_flag=0
-var timer
 
 signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bool)
 
 func _physics_process(delta):
 	if can_change_state:
 		thinking()
-		print(state)
-		match state:
-			State.Move:
-				handle_move()
-				move_and_slide()
-			State.Atk:
-				handle_atk()
-			State.Idle:
-				if front==1:
-					animated_sprite_2d.play("idle-front")
-				else:
-					animated_sprite_2d.play("idle-back")
+	print(state)
+	match state:
+		State.Move:
+			handle_move()
+			move_and_slide()
+		State.Atk:
+			handle_atk()
+			move_and_slide()
+		State.Idle:
+			if front==1:
+				animated_sprite_2d.play("idle-front")
+			else:
+				animated_sprite_2d.play("idle-back")
 
 func handle_atk():
 	can_change_state=false
@@ -51,10 +49,22 @@ func handle_atk():
 		animated_sprite_2d.play("attack_back")
 	else:
 		animated_sprite_2d.play("attack")
+	var direction_x = Input.get_axis("ui_left", "ui_right")
+	if direction_x:
+		velocity.x = direction_x * speed * 0.4
+		print(velocity.x)
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+	var direction_y = Input.get_axis("ui_up", "ui_down")
+	if direction_y:
+		velocity.y = direction_y * speed * 0.4
+	else:
+		velocity.y = move_toward(velocity.y, 0, speed)
 	await animated_sprite_2d.animation_finished
 	attack_range.monitoring=false
 	can_change_state=true
 
+	
 # ПИЗДЕЦ
 func handle_move():
 	var direction_x = Input.get_axis("ui_left", "ui_right")
@@ -115,6 +125,3 @@ func _die():
 	queue_free()
 
 
-	
-	
-	
