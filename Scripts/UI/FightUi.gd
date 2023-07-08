@@ -26,6 +26,7 @@ func start_cd_item(label,imag:TextureRect, cooldown):
 		await get_tree().create_timer(1).timeout
 		label.text = str(cooldown-i)
 	imag.modulate = Color(Color.WHITE, 1)
+	label.text = ''
 	
 func _on_player_item_used(item_num, item:Item):
 	var l = null

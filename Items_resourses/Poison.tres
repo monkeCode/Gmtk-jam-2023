@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Poison" load_steps=4 format=3 uid="uid://dtfe6fo7rbp7r"]
+
+[ext_resource type="Script" path="res://Scripts/Items/Poison.gd" id="1_h4fhi"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_gpwfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy3fa"]
+atlas = ExtResource("2_gpwfs")
+region = Rect2(352, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_h4fhi")
+name = "Poison"
+description = ""
+texture = SubResource("AtlasTexture_oy3fa")
+cooldown = 15.0
+manacost = 0

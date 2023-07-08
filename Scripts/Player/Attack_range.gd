@@ -12,6 +12,12 @@ func _ready():
 
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group('ground'):
+		var velocity = player.velocity
+		var normal = (player.position-body.position).normalized()
+		var reflect = velocity.bounce(normal)
+		player.velocity = reflect
+		
 	if body is Damageable:
 		body.take_damage(damage)
 		var dir = (body.position - player.position).normalized()
