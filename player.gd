@@ -2,7 +2,7 @@ extends Damageable
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
-const SPEED = 300.0
+@export var speed = 300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var front=1
@@ -26,14 +26,14 @@ func handle_atk():
 func handle_move():
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
-		velocity.x = direction_x * SPEED
+		velocity.x = direction_x * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 	var direction_y = Input.get_axis("ui_up", "ui_down")
 	if direction_y:
-		velocity.y = direction_y * SPEED
+		velocity.y = direction_y * speed
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, speed)
 
 func handle_animation():
 	if attack_flag==0:

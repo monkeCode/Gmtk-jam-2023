@@ -54,7 +54,6 @@ func _process(delta):
 		
 	if can_change_state:
 		thinking()
-		print(state)
 		match state:
 			State.Move:
 				move(target.position)
