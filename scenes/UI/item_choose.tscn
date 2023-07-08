@@ -1,18 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0kon1sk7j6t1"]
+[gd_scene load_steps=3 format=3 uid="uid://b0kon1sk7j6t1"]
 
 [ext_resource type="Script" path="res://scenes/UI/item_choose.gd" id="1_2k30q"]
-[ext_resource type="Resource" uid="uid://bf1ocwslx2h1a" path="res://Assets/items/BigSword.tres" id="2_ohslq"]
 [ext_resource type="Resource" uid="uid://dw45xhvoqjqua" path="res://Assets/items/HealingThing.tres" id="3_5qkck"]
-[ext_resource type="Resource" uid="uid://cp6imauroxgro" path="res://Assets/items/MagicShield.tres" id="4_8r6ou"]
-[ext_resource type="Resource" uid="uid://difbvj7ndxed4" path="res://Assets/items/SavingAmulet.tres" id="5_0cydt"]
-[ext_resource type="Resource" uid="uid://di1665c5vlkhy" path="res://Assets/items/StinkyFish.tres" id="6_6jpr7"]
-[ext_resource type="Resource" uid="uid://drlv5nn3h0i8l" path="res://Assets/items/Treasure.tres" id="7_1ab0u"]
 
 [node name="ItemChoose" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_2k30q")
-inv_data = Array[Resource("res://Scripts/Item.gd")]([ExtResource("2_ohslq"), ExtResource("3_5qkck"), ExtResource("4_8r6ou"), ExtResource("5_0cydt"), ExtResource("6_6jpr7"), ExtResource("7_1ab0u")])
+inv_data = Array[Resource("res://Scripts/Items/Item.gd")]([ExtResource("3_5qkck"), null])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

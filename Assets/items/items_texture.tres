@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c866cle1gm4vn"]
-
-[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="1_yt6h6"]
-
-[resource]
-atlas = ExtResource("1_yt6h6")
-region = Rect2(480, 384, 32, 32)
