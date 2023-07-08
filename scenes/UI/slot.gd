@@ -1,4 +1,4 @@
-extends PanelContainer
+extends BaseButton
 @onready var texture_rect = $MarginContainer/TextureRect
 
 
