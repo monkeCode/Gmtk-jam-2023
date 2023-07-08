@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu8vfwjnsse2f"]
+
+[ext_resource type="Script" path="res://Scripts/UI/DamagableText.gd" id="1_qbxxa"]
+[ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="2_g8xg6"]
+
+[node name="DamagableText" type="Node2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_qbxxa")
+speed = 20.0
+color_damage = Color(0.788235, 0.0823529, 0.0705882, 1)
+color_heal = Color(0, 0.54902, 0.258824, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -41.791
+offset_top = -23.8806
+offset_right = 42.209
+offset_bottom = 30.1194
+theme_override_fonts/font = ExtResource("2_g8xg6")
+theme_override_font_sizes/font_size = 50
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
