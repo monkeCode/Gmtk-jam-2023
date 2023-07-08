@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Jam"
+config/name="BossFightsBack"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenDie.png"
+config/icon="res://Assets/logo.png"
 
 [layer_names]
 

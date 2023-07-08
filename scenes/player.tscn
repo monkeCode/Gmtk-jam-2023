@@ -425,7 +425,7 @@ _max_health = 100
 position = Vector2(4.54747e-13, -1.19209e-07)
 scale = Vector2(4.029, 4)
 sprite_frames = SubResource("SpriteFrames_qna8r")
-animation = &"attack"
+animation = &"die"
 autoplay = "idle-front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
