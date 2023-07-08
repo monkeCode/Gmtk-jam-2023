@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="ImmuneShield" load_steps=3 format=3 uid="uid://dc7fo3qsek67k"]
+[gd_resource type="Resource" script_class="ImmuneShield" load_steps=4 format=3 uid="uid://dc7fo3qsek67k"]
 
 [ext_resource type="Script" path="res://Scripts/Items/ImunnShield.gd" id="1_f4ias"]
-[ext_resource type="Texture2D" uid="uid://cjn5gijt11ho1" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/items.tres" id="2_waher"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_tr7ar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d611a"]
+atlas = ExtResource("2_tr7ar")
+region = Rect2(352, 608, 32, 32)
 
 [resource]
 script = ExtResource("1_f4ias")
 imunneTime = 10.0
 name = "Imunne shield"
 description = ""
-texture = ExtResource("2_waher")
+texture = SubResource("AtlasTexture_d611a")
 cooldown = 30.0
 manacost = 0

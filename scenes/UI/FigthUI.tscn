@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm2vvrqeg77yd"]
+[gd_scene load_steps=5 format=3 uid="uid://dm2vvrqeg77yd"]
 
 [ext_resource type="Script" path="res://Scripts/UI/FightUi.gd" id="1_783ye"]
 [ext_resource type="Texture2D" uid="uid://2v86oip2i0a1" path="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/icons.tres" id="1_kprlh"]
 [ext_resource type="Texture2D" uid="uid://dtqlo2m5tktte" path="res://Assets/ui/Minifantasy_Userinterface_Assets/Icons/Minifantasy_GuiIcons-export.png" id="3_b75ng"]
+[ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="3_r3bx0"]
 
-[node name="FigthUI" type="Control" node_paths=PackedStringArray("item_i_image", "item_2_image", "item_1_cd", "item_2_cd")]
+[node name="FigthUI" type="Control" node_paths=PackedStringArray("item_1_image", "item_2_image", "item_1_cd", "item_2_cd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,10 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_783ye")
-item_i_image = NodePath("item_1")
+item_1_image = NodePath("item_1")
 item_2_image = NodePath("item_2")
-item_1_cd = NodePath("item_1/Label")
-item_2_cd = NodePath("item_2/Label2")
+item_1_cd = NodePath("Label")
+item_2_cd = NodePath("Label2")
 metadata/_edit_use_anchors_ = true
 
 [node name="item_1" type="TextureRect" parent="."]
@@ -23,42 +24,52 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 58.0
-offset_top = -105.0
-offset_right = 125.0
-offset_bottom = -64.0
+offset_left = 56.0
+offset_top = -115.0
+offset_right = 137.0
+offset_bottom = -61.0
 grow_vertical = 0
 texture = ExtResource("1_kprlh")
 stretch_mode = 5
-
-[node name="Label" type="Label" parent="item_1"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 4.0
-offset_right = 56.0
-offset_bottom = 41.0
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="item_2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 143.0
-offset_top = -106.0
-offset_right = 210.0
-offset_bottom = -65.0
+offset_left = 126.0
+offset_top = -107.0
+offset_right = 202.0
+offset_bottom = -60.0
 grow_vertical = 0
 texture = ExtResource("3_b75ng")
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="item_2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = -4.0
-offset_right = 56.0
-offset_bottom = 39.0
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -104.0
+offset_right = 120.0
+offset_bottom = -67.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_r3bx0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 143.0
+offset_top = -105.0
+offset_right = 183.0
+offset_bottom = -62.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_r3bx0")
 horizontal_alignment = 1
 vertical_alignment = 1
 

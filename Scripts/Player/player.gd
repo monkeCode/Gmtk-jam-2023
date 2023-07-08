@@ -4,6 +4,8 @@ class_name Player
 
 signal item_used(item_num, item)
 
+signal item_changed(item1,item2)
+
 @export var speed = 300.0
 @export var friction = 200.0
 
@@ -35,6 +37,9 @@ var front=1
 var horizontal_direction=1
 
 signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bool)
+
+func _ready():
+	item_changed.emit(item_1, item_2)
 
 func _physics_process(delta):
 	velocity.x = move_toward(velocity.x, 0, friction*delta)
