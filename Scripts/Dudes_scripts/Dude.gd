@@ -80,6 +80,7 @@ func move(point, delta):
 func attack(target):
 	can_change_state = false
 	play_anim('atk')
+	await get_tree().create_timer(0.2).timeout
 	deal_damage(target)
 	await animator.animation_finished
 	can_change_state = true

@@ -1451,8 +1451,8 @@ size = Vector2(10, 9)
 [node name="Druid" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_e7eg3")
-speed = 90.0
-damage = 40
+speed = 75.0
+damage = 25
 ability_1_cooldown = 10.0
 ability_1_chance = 5
 ability_2_cooldown = 60.0

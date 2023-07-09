@@ -9,8 +9,8 @@ size = Vector2(9, 12)
 [node name="SwordMan" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_r28hh")
-speed = 100.0
-damage = 30
+speed = 80.0
+damage = 20
 ability_1_cooldown = 10.0
 ability_1_chance = 5
 ability_2_cooldown = 30.0
