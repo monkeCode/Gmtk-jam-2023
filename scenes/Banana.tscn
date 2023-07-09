@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://qbkrh82esk43"]
+
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="1_3wqg2"]
+[ext_resource type="Script" path="res://scenes/Banana_zone.gd" id="1_o51kq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48it8"]
+atlas = ExtResource("1_3wqg2")
+region = Rect2(128, 288, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ng0yv"]
+radius = 38.2099
+
+[node name="Banana" type="Node2D"]
+scale = Vector2(0.53, 0.53)
+script = ExtResource("1_o51kq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_48it8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ng0yv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://ma323anlixoq"]
+
+[ext_resource type="Texture2D" uid="uid://cn58k417hgdbc" path="res://Assets/magic/Minifantasy_MagicAndSorcery_Assets/Spells/Fire/Fireball/Minifantasy_MagicAndSorceryFireBallHoldingBackLayer.png" id="1_lldvm"]
+[ext_resource type="Script" path="res://scenes/effects/fireball.gd" id="1_w6ys7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyngl"]
+atlas = ExtResource("1_lldvm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b66cm"]
+atlas = ExtResource("1_lldvm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtx1o"]
+atlas = ExtResource("1_lldvm")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6eho"]
+atlas = ExtResource("1_lldvm")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m327w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyngl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b66cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtx1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6eho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ro3o"]
+radius = 7.07107
+
+[node name="Damagable_balls" type="Node2D"]
+script = ExtResource("1_w6ys7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 6)
+sprite_frames = SubResource("SpriteFrames_m327w")
+frame = 2
+frame_progress = 0.777772
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0ro3o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
