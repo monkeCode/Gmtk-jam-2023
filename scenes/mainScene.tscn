@@ -49,6 +49,7 @@ show_behind_parent = true
 light_mask = 2
 visibility_layer = 2
 z_index = -10
+layout_mode = 0
 offset_left = -556.0
 offset_top = -304.0
 offset_right = 595.0
