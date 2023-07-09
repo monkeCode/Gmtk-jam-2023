@@ -11,7 +11,8 @@ region = Rect2(352, 608, 32, 32)
 script = ExtResource("1_f4ias")
 imunneTime = 10.0
 name = "Imunne shield"
-description = ""
+description = "Gives you immunity for 3 seconds.
+Cooldown: 30."
 texture = SubResource("AtlasTexture_d611a")
 cooldown = 30.0
 manacost = 0

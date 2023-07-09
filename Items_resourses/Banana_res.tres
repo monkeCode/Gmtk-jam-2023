@@ -10,7 +10,8 @@ region = Rect2(128, 288, 32, 32)
 [resource]
 script = ExtResource("1_8hfu1")
 name = "FUCK BANANA"
-description = "just banana"
+description = "Be careful! Banana pills are dangerous these days...
+Cooldown: 1."
 texture = SubResource("AtlasTexture_w5cxe")
 cooldown = 1.0
 manacost = 0

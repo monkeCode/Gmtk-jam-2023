@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0kon1sk7j6t1"]
+[gd_scene load_steps=9 format=3 uid="uid://b0kon1sk7j6t1"]
 
 [ext_resource type="Script" path="res://scenes/UI/item_choose.gd" id="1_2k30q"]
 [ext_resource type="Resource" uid="uid://c2kd3chv1bpru" path="res://Items_resourses/Healing stick.tres" id="3_5qkck"]
 [ext_resource type="PackedScene" uid="uid://djcskxpgi85ot" path="res://scenes/UI/slot.tscn" id="3_k6wqy"]
 [ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="4_x4gfi"]
 [ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="5_3sph4"]
+[ext_resource type="Resource" uid="uid://c8jj8o8bqfcq2" path="res://Items_resourses/Banana_res.tres" id="6_tbke6"]
+[ext_resource type="Resource" uid="uid://lnaqkhlf0aib" path="res://Items_resourses/Fireballs.tres" id="7_nfbgm"]
+[ext_resource type="Resource" uid="uid://bkmktgi2uqpt2" path="res://Items_resourses/Mega_power_ring.tres" id="8_qbxw3"]
 
 [node name="ItemChoose" type="PanelContainer"]
 offset_right = 40.0
@@ -36,15 +39,15 @@ item = ExtResource("5_3sph4")
 
 [node name="Slot4" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
 layout_mode = 2
-item = ExtResource("3_5qkck")
+item = ExtResource("6_tbke6")
 
 [node name="Slot5" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
 layout_mode = 2
-item = ExtResource("4_x4gfi")
+item = ExtResource("7_nfbgm")
 
 [node name="Slot6" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
 layout_mode = 2
-item = ExtResource("5_3sph4")
+item = ExtResource("8_qbxw3")
 
 [connection signal="toggled" from="MarginContainer/GridContainer/Slot" to="." method="_on_slot_toggled"]
 [connection signal="toggled" from="MarginContainer/GridContainer/Slot2" to="." method="_on_slot_2_toggled"]

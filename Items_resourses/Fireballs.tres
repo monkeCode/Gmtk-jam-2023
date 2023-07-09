@@ -13,7 +13,8 @@ lifetime = 3.0
 damage = 5.0
 count_balls = 4
 name = "Holy balls "
-description = "awesome cock"
+description = "Fireballs start spinning around you!
+Cooldown: 30."
 texture = SubResource("AtlasTexture_3lbcp")
 cooldown = 30.0
 manacost = 0

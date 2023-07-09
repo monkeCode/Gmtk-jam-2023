@@ -7,7 +7,8 @@
 script = ExtResource("1_plk75")
 heals = 20
 name = "Healing stick"
-description = "Heals you 20 HP."
+description = "Heals you 20 HP.
+Cooldown: 20."
 texture = ExtResource("2_x7sa5")
 cooldown = 20.0
 manacost = 0
