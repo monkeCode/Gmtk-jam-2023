@@ -10,7 +10,8 @@ region = Rect2(256, 512, 32, 32)
 [resource]
 script = ExtResource("1_ecr1i")
 name = "Mega power ring"
-description = ""
+description = "Deals 100000 damage. But it is very unreliable...
+"
 texture = SubResource("AtlasTexture_y4xan")
 cooldown = 0.0
 manacost = 0
