@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://p3tmiucuoe5q"]
+[gd_scene load_steps=26 format=3 uid="uid://p3tmiucuoe5q"]
 
 [ext_resource type="Texture2D" uid="uid://bh4xedb1tcwk6" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonFloorTiles.png" id="1_us0h4"]
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_v16w0"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="10_brslk"]
 [ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="11_dmitd"]
 [ext_resource type="Resource" uid="uid://bkmktgi2uqpt2" path="res://Items_resourses/Mega_power_ring.tres" id="12_cebj8"]
+[ext_resource type="AudioStream" uid="uid://dwatrrni4x36c" path="res://Assets/sounds/Retro Music - WolfSynth - Tempo Normal - 02.wav" id="16_nexe5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
 texture = ExtResource("1_us0h4")
@@ -2761,7 +2762,6 @@ item_2 = ExtResource("12_cebj8")
 
 [node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
 position = Vector2(642, 363)
-bombs_count = 10
 target = NodePath("../Player")
 
 [node name="Druid" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_khtr1")]
@@ -2771,6 +2771,10 @@ target = NodePath("../Player")
 [node name="SwordMan" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_brslk")]
 position = Vector2(766, 253)
 target = NodePath("../Player")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_nexe5")
+autoplay = true
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="died" from="Rogue" to="." method="_on_rogue_died"]

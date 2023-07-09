@@ -33,6 +33,8 @@ func release_ability_2(target):
 	speed*=boost_speed
 	await get_tree().create_timer(best_timer).timeout
 	is_human = true
+	damage/=boost_damage
+	speed/=boost_speed
 	if get_health() >=0:
 		can_change_state = false
 		animator.play("to_human")

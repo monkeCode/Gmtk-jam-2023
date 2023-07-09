@@ -33,7 +33,7 @@ func _die():
 	while true:
 		await animator.frame_changed
 		if animator.frame == 15:
-			if(target.position-position).length() <= atk_distance*1.5:
+			if(target.position-position).length() <= atk_distance*3:
 				target.take_damage(damage*2)
 				target.velocity += (target.position-position).normalized() * 20
 			break

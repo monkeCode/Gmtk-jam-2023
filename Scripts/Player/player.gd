@@ -151,10 +151,14 @@ func thinking():
 func take_damage(dmg):
 	if get_health() <=0:
 		return
+		
+	audio.stream = took_damage
+	audio.play() 
+	
+	if dmg - damage_resist <= 0:
+		return
 	state=State.Take_damage
 	can_change_state=false
-	audio.stream = took_damage
-	audio.play()
 	if front==0 and horizontal_direction==0:
 		animated_sprite_2d.play("took_damage_back")
 	else:

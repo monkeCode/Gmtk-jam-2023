@@ -7,7 +7,7 @@ radius = 31.0161
 
 [node name="poison_zone" type="Node2D"]
 script = ExtResource("1_lin0s")
-damage = 5
+damage = 7
 damages_count = 4
 damage_delay = 2.0
 
