@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bam7x346mk638" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonCliffTiles.png" id="4_ucjbb"]
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="5_ea465"]
 [ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="6_0brlh"]
-[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="7_k5pio"]
+[ext_resource type="Resource" uid="uid://c8jj8o8bqfcq2" path="res://Items_resourses/Banana_res.tres" id="7_cwg1t"]
 [ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="8_csxqr"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="9_khtr1"]
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="10_brslk"]
@@ -335,7 +335,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 1, 65536, 0, 1, 131072, 0, 1, 196608,
 [node name="Player" parent="." instance=ExtResource("5_ea465")]
 position = Vector2(456, 248)
 item_1 = ExtResource("6_0brlh")
-item_2 = ExtResource("7_k5pio")
+item_2 = ExtResource("7_cwg1t")
 
 [node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
 position = Vector2(642, 363)
