@@ -1,14 +1,14 @@
 class_name Druid
 extends Dude
 @export_category("Root")
-@export var root_count = 3
-@export var root_radius:float = 1
+@export var root_count = 10
+@export var root_radius:float = 20
 var root = preload("res://scenes/dudes/druid/Root.tscn")
 
 @export_category("Beast")
-@export var boost_speed:float =  1.2
+@export var boost_speed:float =  1.6
 @export var boost_damage:float = 1.8
-@export var best_timer:float = 10 
+@export var best_timer:float = 15
 
 var is_human = true
 

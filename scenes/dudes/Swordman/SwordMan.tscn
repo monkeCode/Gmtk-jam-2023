@@ -10,14 +10,14 @@ size = Vector2(9, 12)
 collision_layer = 2
 script = ExtResource("1_r28hh")
 speed = 100.0
-damage = 10
+damage = 30
 ability_1_cooldown = 10.0
 ability_1_chance = 5
 ability_2_cooldown = 30.0
 ability_2_chance = 1
 atk_distance = 20.0
-_health = 10
-_max_health = 10
+_health = 350
+_max_health = 350
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

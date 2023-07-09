@@ -45,4 +45,4 @@ func add_item(item):
 	print(items_choosed.size())
 	if items_choosed.size()>=MAX_ITEMS:
 		emit_signal("weapons_are_choosed", items_choosed)
-	
+

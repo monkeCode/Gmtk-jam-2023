@@ -2,7 +2,7 @@ extends Dude
 class_name Rogue
 
 var bomb = preload("res://scenes/dudes/Bomb.tscn")
-@export var bombs_count:int = 4
+@export var bombs_count:int = 10
 
 func release_ability_1(target):
 	var start_angle = randf_range(0, 2*PI)
