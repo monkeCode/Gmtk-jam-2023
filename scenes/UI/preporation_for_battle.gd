@@ -13,6 +13,6 @@ func _process(delta):
 
 
 func _on_item_choose_weapons_are_choosed(rap):
-	Player.item_1=rap[0]
-	Player.item_2=rap[1]
+	StaticValues.item_1=rap[0]
+	StaticValues.item_2=rap[1]
 	get_tree().change_scene_to_packed(scene_to_load)

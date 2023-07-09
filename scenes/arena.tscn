@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://p3tmiucuoe5q"]
+[gd_scene load_steps=25 format=3 uid="uid://p3tmiucuoe5q"]
 
 [ext_resource type="Texture2D" uid="uid://bh4xedb1tcwk6" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonFloorTiles.png" id="1_us0h4"]
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_v16w0"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bnq2q67jwramu" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Props/Minifantasy_DungeonProps.png" id="8_psuc6"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="9_khtr1"]
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="10_brslk"]
+[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="11_dmitd"]
+[ext_resource type="Resource" uid="uid://bkmktgi2uqpt2" path="res://Items_resourses/Mega_power_ring.tres" id="12_cebj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
 texture = ExtResource("1_us0h4")
@@ -2754,6 +2756,8 @@ layer_2/tile_data = PackedInt32Array(2949221, 1179655, 1, 3014758, 1114119, 1, 2
 
 [node name="Player" parent="." instance=ExtResource("5_ea465")]
 position = Vector2(456, 248)
+item_1 = ExtResource("11_dmitd")
+item_2 = ExtResource("12_cebj8")
 
 [node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
 position = Vector2(642, 363)

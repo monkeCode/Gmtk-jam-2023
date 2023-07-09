@@ -9,8 +9,8 @@ signal item_changed(item1,item2)
 @export var speed = 300.0
 @export var friction = 200.0
 
-static var item_1:Item
-static var item_2:Item
+@export var item_1:Item
+@export var item_2:Item
 
 var item_1_can_use = true
 var item_2_can_use = true
@@ -46,6 +46,9 @@ var horizontal_direction=1
 signal facing_direction_changed(facing_right:bool, facing_front:bool, hor_dir:bool)
 
 func _ready():
+	if StaticValues.item_1 != null and StaticValues.item_2 != null:
+		item_1 = StaticValues.item_1
+		item_2 = StaticValues.item_2
 	item_changed.emit(item_1, item_2)
 
 func _physics_process(delta):
