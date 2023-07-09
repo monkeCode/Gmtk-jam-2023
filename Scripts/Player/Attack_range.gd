@@ -4,6 +4,7 @@ extends Area2D
 @export var damage : int = 10
 @export var player : Player
 @export var facing_shape : FacingRightDirectionCollisionShape
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 
 func _ready():
@@ -16,6 +17,8 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 		var velocity = player.velocity
 		var normal = (player.position-body.position).normalized()
 		var reflect = velocity.bounce(normal)
+		audio_stream_player_2d.play()
+		$CollisionShape2D/CPUParticles2D.emitting = true
 		player.velocity = reflect
 		
 	if body is Damageable:

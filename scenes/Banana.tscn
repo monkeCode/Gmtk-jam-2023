@@ -11,6 +11,7 @@ region = Rect2(128, 288, 32, 32)
 radius = 38.2099
 
 [node name="Banana" type="Node2D"]
+scale = Vector2(0.53, 0.53)
 script = ExtResource("1_o51kq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

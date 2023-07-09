@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://p3tmiucuoe5q"]
+[gd_scene load_steps=26 format=3 uid="uid://p3tmiucuoe5q"]
 
 [ext_resource type="Texture2D" uid="uid://bh4xedb1tcwk6" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonFloorTiles.png" id="1_us0h4"]
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_v16w0"]
+[ext_resource type="PackedScene" path="res://scenes/end_menu.tscn" id="2_d2dy1"]
 [ext_resource type="Texture2D" uid="uid://cb70bbc3hvwpr" path="res://Assets/desert/_Legacy_Assets/(legacy1.0)Minifantasy_DesolateDesertTiles.png" id="2_mnqy8"]
 [ext_resource type="Texture2D" uid="uid://c1y1bqeh8mp8v" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonWallTiles.png" id="2_syrrf"]
 [ext_resource type="Texture2D" uid="uid://vlf3gsyd0s7k" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonDoorTiles.png" id="3_k7qqd"]
@@ -9,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="5_ea465"]
 [ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="6_0brlh"]
 [ext_resource type="Texture2D" uid="uid://bwhdsmdl48r0h" path="res://Assets/desert/Minifantasy_DesolateDesert_Assets/Tileset/ForgottenPlainsLinkDirt/Minifantasy_DesolateDesert_ForgottenPlainsLinkDirt.png" id="6_2pmth"]
-[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="7_k5pio"]
 [ext_resource type="Texture2D" uid="uid://x3gnosugrpub" path="res://Assets/desert/Minifantasy_DesolateDesert_Assets/Tileset/ForgottenPlainsLinkDirt/Minifantasy_DesolateDesert_ForgottenPlainsLinkDirt0.png" id="7_r7esn"]
 [ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="8_csxqr"]
 [ext_resource type="Texture2D" uid="uid://bnq2q67jwramu" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Props/Minifantasy_DungeonProps.png" id="8_psuc6"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="9_khtr1"]
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="10_brslk"]
+[ext_resource type="Resource" uid="uid://lnaqkhlf0aib" path="res://Items_resourses/Fireballs.tres" id="13_bndi0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaiu6"]
 texture = ExtResource("1_us0h4")
@@ -2732,6 +2733,7 @@ sources/7 = SubResource("TileSetAtlasSource_8fm4g")
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_v16w0")
+scene_to_load = ExtResource("2_d2dy1")
 
 [node name="TileMap" type="TileMap" parent="." groups=["ground"]]
 tile_set = SubResource("TileSet_ddn0e")
@@ -2756,8 +2758,9 @@ layer_2/tile_data = PackedInt32Array(2949221, 1179655, 1, 3014758, 1114119, 1, 2
 
 [node name="Player" parent="." instance=ExtResource("5_ea465")]
 position = Vector2(456, 248)
+speed = 150.0
 item_1 = ExtResource("6_0brlh")
-item_2 = ExtResource("7_k5pio")
+item_2 = ExtResource("13_bndi0")
 
 [node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
 position = Vector2(642, 363)

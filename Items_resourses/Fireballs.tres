@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FireBalls" load_steps=4 format=3 uid="uid://lnaqkhlf0aib"]
+
+[ext_resource type="Script" path="res://Scripts/Items/FireBalls.gd" id="1_p4tkw"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_gpc2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lbcp"]
+atlas = ExtResource("2_gpc2w")
+region = Rect2(320, 544, 32, 32)
+
+[resource]
+script = ExtResource("1_p4tkw")
+lifetime = 3.0
+damage = 5.0
+count_balls = 4
+name = "Holy balls "
+description = "awesome cock"
+texture = SubResource("AtlasTexture_3lbcp")
+cooldown = 30.0
+manacost = 0

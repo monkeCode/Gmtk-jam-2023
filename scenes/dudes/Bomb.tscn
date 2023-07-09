@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://jhvvnvo3v807"]
+[gd_scene load_steps=24 format=3 uid="uid://jhvvnvo3v807"]
 
 [ext_resource type="Script" path="res://Scripts/Dudes_scripts/Bomb.gd" id="1_3w8wq"]
 [ext_resource type="Texture2D" uid="uid://djt0t77cdmtw" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombProjectileFrame1.png" id="1_fqgvb"]
 [ext_resource type="Texture2D" uid="uid://btg7qahncaepi" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombExplosion.png" id="1_ograg"]
 [ext_resource type="Texture2D" uid="uid://5kc67jfs8nh3" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Rogue/Special_Animations/Throw Bomb/Minifantasy_TrueHeroesRogueBombProjectileFrame2.png" id="2_qsagw"]
+[ext_resource type="AudioStream" uid="uid://cpkbdla8u3gxu" path="res://Assets/sounds/bomb.wav" id="5_e54hg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lylqy"]
 radius = 3.0
@@ -156,6 +157,9 @@ collision_mask = 256
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_43m4n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_e54hg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

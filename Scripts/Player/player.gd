@@ -15,6 +15,13 @@ signal item_changed(item1,item2)
 var item_1_can_use = true
 var item_2_can_use = true
 
+@onready var audio = $AudioStreamPlayer2D
+
+@export_category("Sounds")
+@export var cast_sound:AudioStream
+@export var cast_sound_2:AudioStream
+@export var took_damage:AudioStream
+
 var damage_resist = 0
 
 enum State{
@@ -76,11 +83,15 @@ func process_items():
 		item_1.use_item(self)
 		item_used.emit(0, item_1)
 		cd_item_1()
+		audio.stream = cast_sound
+		audio.play()
 		return
 	if Input.is_action_pressed('use_item_2') and item_2_can_use:
 		item_2.use_item(self)
 		item_used.emit(1, item_2)
 		cd_item_2()
+		audio.stream = cast_sound_2
+		audio.play()
 
 
 func handle_atk():
@@ -139,6 +150,8 @@ func take_damage(dmg):
 		return
 	state=State.Take_damage
 	can_change_state=false
+	audio.stream = took_damage
+	audio.play()
 	if front==0 and horizontal_direction==0:
 		animated_sprite_2d.play("took_damage_back")
 	else:
@@ -152,6 +165,6 @@ func _die():
 	can_change_state=false
 	animated_sprite_2d.play("die")
 	await animated_sprite_2d.animation_finished
-	queue_free()
+	died.emit()
 
 

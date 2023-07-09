@@ -10,20 +10,21 @@ class_name Bomb
 @export var push_force:float = 20
 
 @onready var animated:AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var audio:AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var throwed: bool= false
 var is_explosed = false
 var last_pos = position
 var x_total = 0
 
-func init():
-	super.init()
+func _ready():
+	timer *= randf_range(0.5,1.5)
+	super._ready()
 
 func throw():
 	throwed = true
 	animated.play("fly")
-	
+
 func _physics_process(delta):
 	x_total+=delta
 	if throwed:
@@ -45,14 +46,13 @@ func _physics_process(delta):
 	if x_total >= timer and !is_explosed:
 		is_explosed = true
 		explose()
-	
-
 
 func explose():
 	animated.play("explode")
 	while true:
 		await animated.frame_changed
 		if animated.frame == 7:
+			audio.play()
 			for b in bodies:
 				b.take_damage(damage)
 				b.velocity += (b.position-position).normalized() * push_force
