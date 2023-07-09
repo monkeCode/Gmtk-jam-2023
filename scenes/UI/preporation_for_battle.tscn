@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://o55b53prdf3b"]
+[gd_scene load_steps=4 format=3 uid="uid://o55b53prdf3b"]
 
 [ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="1_2a5qt"]
 [ext_resource type="PackedScene" uid="uid://b0kon1sk7j6t1" path="res://scenes/UI/item_choose.tscn" id="1_nnsfb"]
 [ext_resource type="Script" path="res://scenes/UI/preporation_for_battle.gd" id="1_xonrv"]
-[ext_resource type="PackedScene" uid="uid://p3tmiucuoe5q" path="res://scenes/arena.tscn" id="2_488jj"]
 
 [node name="Preporation for battle" type="Control"]
 layout_mode = 3
@@ -13,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xonrv")
-scene_to_load = ExtResource("2_488jj")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

@@ -1,6 +1,6 @@
 extends Control
 @onready var item_choose = $ItemChoose
-@export var scene_to_load : PackedScene
+var scene_to_load = preload("res://scenes/arena.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,3 +16,4 @@ func _on_item_choose_weapons_are_choosed(rap):
 	StaticValues.item_1=rap[0]
 	StaticValues.item_2=rap[1]
 	get_tree().change_scene_to_packed(scene_to_load)
+	queue_free()

@@ -1,6 +1,6 @@
 extends Control
 
-@export var scene_to_load : PackedScene
+var scene_to_load = load("res://scenes/mainScene.tscn")
 
 func _ready():
 	pass # Replace with function body.
