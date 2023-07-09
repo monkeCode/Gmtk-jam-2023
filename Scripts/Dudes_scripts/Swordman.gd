@@ -5,9 +5,9 @@ var throwable_item = preload("res://scenes/dudes/Swordman/ThrowableItem.tscn")
 
 @export var boost_timer:float = 5
 
-@export var speed_boost_coef:float = 1.5
+@export var speed_boost_coef:float = 1.8
 
-@export var damage_boost_coef:float = 1.5
+@export var damage_boost_coef:float = 1.8
 
 func _ready():
 	super._ready()

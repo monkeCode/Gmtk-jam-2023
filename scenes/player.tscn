@@ -423,7 +423,7 @@ radius = 15.0333
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 256
 script = ExtResource("1_0d5b3")
-speed = 200.0
+speed = 75.0
 cast_sound = ExtResource("2_xsy06")
 cast_sound_2 = ExtResource("3_xhpqt")
 took_damage = ExtResource("4_q57jm")
@@ -447,6 +447,7 @@ shape = SubResource("RectangleShape2D_mch4g")
 collision_layer = 8388608
 collision_mask = 3
 script = ExtResource("4_m4h3l")
+damage = 20
 player = NodePath("..")
 facing_shape = NodePath("CollisionShape2D")
 
