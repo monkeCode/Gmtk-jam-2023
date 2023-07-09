@@ -417,6 +417,7 @@ size = Vector2(42, 22)
 radius = 15.0333
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 256
 script = ExtResource("1_0d5b3")
 speed = 200.0
 _health = 100
@@ -450,16 +451,16 @@ facing_up_position = Vector2(0, -18)
 facing_down_position = Vector2(0, 18)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_speed = 3.0
 
 [node name="Control" type="Control" parent="Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -338.0
-offset_top = -192.0
-offset_right = 340.0
-offset_bottom = 190.0
+offset_left = -231.0
+offset_top = -130.0
+offset_right = 230.0
+offset_bottom = 129.0
 
 [node name="FigthUI" parent="Camera2D/Control" instance=ExtResource("6_m7oi4")]
 layout_mode = 1
