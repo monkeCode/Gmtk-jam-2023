@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0kon1sk7j6t1"]
+[gd_scene load_steps=6 format=3 uid="uid://b0kon1sk7j6t1"]
 
 [ext_resource type="Script" path="res://scenes/UI/item_choose.gd" id="1_2k30q"]
 [ext_resource type="Resource" uid="uid://c2kd3chv1bpru" path="res://Items_resourses/Healing stick.tres" id="3_5qkck"]
+[ext_resource type="PackedScene" uid="uid://djcskxpgi85ot" path="res://scenes/UI/slot.tscn" id="3_k6wqy"]
+[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="4_x4gfi"]
+[ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="5_3sph4"]
 
 [node name="ItemChoose" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_2k30q")
-inv_data = Array[Resource("res://Scripts/Items/Item.gd")]([ExtResource("3_5qkck"), null])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -19,3 +21,34 @@ theme_override_constants/margin_bottom = 4
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
 columns = 3
+
+[node name="Slot" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("3_5qkck")
+
+[node name="Slot2" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("4_x4gfi")
+
+[node name="Slot3" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("5_3sph4")
+
+[node name="Slot4" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("3_5qkck")
+
+[node name="Slot5" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("4_x4gfi")
+
+[node name="Slot6" parent="MarginContainer/GridContainer" instance=ExtResource("3_k6wqy")]
+layout_mode = 2
+item = ExtResource("5_3sph4")
+
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot" to="." method="_on_slot_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot2" to="." method="_on_slot_2_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot3" to="." method="_on_slot_3_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot4" to="." method="_on_slot_4_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot5" to="." method="_on_slot_5_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/Slot6" to="." method="_on_slot_6_toggled"]

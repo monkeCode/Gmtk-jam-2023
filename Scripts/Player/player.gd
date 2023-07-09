@@ -9,8 +9,8 @@ signal item_changed(item1,item2)
 @export var speed = 300.0
 @export var friction = 200.0
 
-@export var item_1:Item
-@export var item_2:Item
+static var item_1:Item
+static var item_2:Item
 
 var item_1_can_use = true
 var item_2_can_use = true

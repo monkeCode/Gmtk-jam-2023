@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmrfovsogbxjj"]
+[gd_scene load_steps=6 format=3 uid="uid://dmrfovsogbxjj"]
 
 [ext_resource type="PackedScene" uid="uid://b7wlqvgal3rbo" path="res://scenes/dudes/Swordman/SwordMan.tscn" id="1_knkpi"]
 [ext_resource type="PackedScene" uid="uid://c7lg5vya6bj3p" path="res://scenes/player.tscn" id="2_k8rwb"]
-[ext_resource type="Resource" uid="uid://dtfe6fo7rbp7r" path="res://Items_resourses/Poison.tres" id="3_7rv6e"]
 [ext_resource type="PackedScene" uid="uid://u5w7jd3aeyml" path="res://scenes/dudes/druid/Druid.tscn" id="3_vl75r"]
-[ext_resource type="Resource" uid="uid://dc7fo3qsek67k" path="res://Items_resourses/ImmShield.tres" id="4_3uby5"]
 [ext_resource type="PackedScene" uid="uid://dlbkxg8gvrl5d" path="res://scenes/dudes/Rogue.tscn" id="4_tv235"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldnxs"]
@@ -20,8 +18,6 @@ _health = 150
 [node name="Player" parent="." instance=ExtResource("2_k8rwb")]
 position = Vector2(152, -56)
 collision_mask = 5
-item_1 = ExtResource("3_7rv6e")
-item_2 = ExtResource("4_3uby5")
 
 [node name="Druid" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_vl75r")]
 position = Vector2(70, 21)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnvaw5ev8xjrg"]
+[gd_scene load_steps=5 format=3 uid="uid://dnvaw5ev8xjrg"]
 
 [ext_resource type="Script" path="res://scenes/Control.gd" id="1_4rhwj"]
 [ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="2_2r3uo"]
-[ext_resource type="PackedScene" uid="uid://p3tmiucuoe5q" path="res://scenes/arena.tscn" id="2_rbnox"]
+[ext_resource type="PackedScene" uid="uid://o55b53prdf3b" path="res://scenes/UI/preporation_for_battle.tscn" id="2_xmhfs"]
+[ext_resource type="Texture2D" uid="uid://cqctx6t2jjt8e" path="res://Assets/main_menu_texture.png" id="4_1qycf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,15 +23,36 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rhwj")
-scene_to_load = ExtResource("2_rbnox")
+scene_to_load = ExtResource("2_xmhfs")
 
 [node name="Button" type="Button" parent="CanvasLayer/Start_game"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -20.5
+offset_right = 89.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.686275, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2r3uo")
 theme_override_font_sizes/font_size = 32
 text = "Play game!"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Start_game"]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+z_index = -10
+offset_left = -556.0
+offset_top = -304.0
+offset_right = 595.0
+offset_bottom = 343.0
+texture = ExtResource("4_1qycf")
 
 [connection signal="pressed" from="CanvasLayer/Start_game/Button" to="CanvasLayer/Start_game" method="_on_button_pressed"]
