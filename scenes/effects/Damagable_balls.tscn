@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ma323anlixoq"]
+[gd_scene load_steps=9 format=3 uid="uid://hcfxd61686vr"]
 
 [ext_resource type="Texture2D" uid="uid://cn58k417hgdbc" path="res://Assets/magic/Minifantasy_MagicAndSorcery_Assets/Spells/Fire/Fireball/Minifantasy_MagicAndSorceryFireBallHoldingBackLayer.png" id="1_lldvm"]
 [ext_resource type="Script" path="res://scenes/effects/fireball.gd" id="1_w6ys7"]

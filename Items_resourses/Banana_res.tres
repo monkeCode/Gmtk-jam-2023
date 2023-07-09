@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Banana" load_steps=4 format=3 uid="uid://c8jj8o8bqfcq2"]
+
+[ext_resource type="Script" path="res://Scripts/Items/Banana.gd" id="1_8hfu1"]
+[ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="2_atto1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5cxe"]
+atlas = ExtResource("2_atto1")
+region = Rect2(128, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_8hfu1")
+name = "FUCK BANANA"
+description = "just banana"
+texture = SubResource("AtlasTexture_w5cxe")
+cooldown = 1.0
+manacost = 0

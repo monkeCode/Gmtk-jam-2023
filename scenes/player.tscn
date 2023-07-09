@@ -1,11 +1,15 @@
-[gd_scene load_steps=60 format=3 uid="uid://c7lg5vya6bj3p"]
+[gd_scene load_steps=64 format=3 uid="uid://c7lg5vya6bj3p"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_0d5b3"]
 [ext_resource type="Texture2D" uid="uid://cbbi4luuc4cvb" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenIdle.png" id="2_bg7ai"]
+[ext_resource type="AudioStream" uid="uid://bw4om6jsl4r4n" path="res://Assets/sounds/cast.wav" id="2_xsy06"]
 [ext_resource type="Texture2D" uid="uid://chfglvio37j7c" path="res://Assets/creatures/Minifantasy_Creatures_Assets/Monsters/Slime/Green_Slime/Minifantasy_CreaturesSlimeGreenAnimations.png" id="3_1oeod"]
+[ext_resource type="AudioStream" uid="uid://dyl7e7qujij44" path="res://Assets/sounds/cast 2.wav" id="3_xhpqt"]
 [ext_resource type="Script" path="res://Scripts/Player/Attack_range.gd" id="4_m4h3l"]
+[ext_resource type="AudioStream" uid="uid://b61x81a6jslok" path="res://Assets/sounds/sword atk.wav" id="4_q57jm"]
 [ext_resource type="Script" path="res://Scripts/Player/FacingRightDirectionCollisionShape.gd" id="5_4aw1v"]
 [ext_resource type="PackedScene" uid="uid://dm2vvrqeg77yd" path="res://scenes/UI/FigthUI.tscn" id="6_m7oi4"]
+[ext_resource type="AudioStream" uid="uid://b58j7runs6c0j" path="res://Assets/sounds/slime bounce.wav" id="6_pea76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_do0vd"]
 atlas = ExtResource("3_1oeod")
@@ -420,8 +424,13 @@ radius = 15.0333
 collision_layer = 256
 script = ExtResource("1_0d5b3")
 speed = 200.0
+cast_sound = ExtResource("2_xsy06")
+cast_sound_2 = ExtResource("3_xhpqt")
+took_damage = ExtResource("4_q57jm")
 _health = 100
 _max_health = 100
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.54747e-13, -1.19209e-07)
@@ -449,6 +458,22 @@ facing_left_position = Vector2(-18, 3)
 facing_right_position = Vector2(18, 3)
 facing_up_position = Vector2(0, -18)
 facing_down_position = Vector2(0, 18)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Attack_range/CollisionShape2D"]
+emitting = false
+amount = 200
+lifetime = 0.4
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 23.04
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+color = Color(0.140625, 0.644531, 0.402344, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Attack_range"]
+stream = ExtResource("6_pea76")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

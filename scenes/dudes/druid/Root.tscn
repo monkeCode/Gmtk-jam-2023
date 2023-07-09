@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7rm01yj8cti2"]
+[gd_scene load_steps=21 format=3 uid="uid://c7rm01yj8cti2"]
 
 [ext_resource type="Script" path="res://Scripts/Dudes_scripts/Root.gd" id="1_fx150"]
 [ext_resource type="Texture2D" uid="uid://b854nplm8breo" path="res://Assets/heroes/Minifantasy_TrueHeroes_Assets/Druid/Special_Animations/Root_Summoning/Minifantasy_TrueHeroesDruidRootAttack.png" id="1_qwv5t"]
+[ext_resource type="AudioStream" uid="uid://bpsp36nigno4" path="res://Assets/sounds/root spawn.wav" id="3_sb030"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w680o"]
 atlas = ExtResource("1_qwv5t")
@@ -137,6 +138,9 @@ collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_lyo4p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sb030")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

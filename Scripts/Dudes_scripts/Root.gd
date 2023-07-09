@@ -1,12 +1,13 @@
 extends Node
 
 @export var damage:int = 10
-
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 var bodies = []
 
 func _ready():
 	var animator = $AnimatedSprite2D
 	await animator.animation_finished
+	audio_stream_player_2d.play()
 	for i in bodies:
 		i.take_damage(damage)
 	animator.play("aft_atk")

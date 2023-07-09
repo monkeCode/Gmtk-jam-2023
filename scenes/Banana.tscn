@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://qbkrh82esk43"]
+[gd_scene load_steps=5 format=3 uid="uid://cb4i3pm427181"]
 
 [ext_resource type="Texture2D" uid="uid://dlwohl8bqjb1a" path="res://Assets/items/Kyrise's 16x16 RPG Icon Pack - V1.3/spritesheet/spritesheet_32x32.png" id="1_3wqg2"]
 [ext_resource type="Script" path="res://scenes/Banana_zone.gd" id="1_o51kq"]

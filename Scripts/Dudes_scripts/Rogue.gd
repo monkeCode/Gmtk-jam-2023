@@ -20,7 +20,6 @@ func release_ability_1(target):
 func release_ability_2(target):
 	var b = bomb.instantiate()
 	b.position = position
-	b.timer*=randf_range(1,3)
 	get_tree().get_root().get_child(0).add_child(b)
 
 func ability_1_custom_condition():
