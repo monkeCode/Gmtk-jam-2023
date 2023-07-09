@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://p3tmiucuoe5q"]
+[gd_scene load_steps=25 format=3 uid="uid://p3tmiucuoe5q"]
 
 [ext_resource type="Texture2D" uid="uid://bh4xedb1tcwk6" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonFloorTiles.png" id="1_us0h4"]
 [ext_resource type="Script" path="res://scenes/arena.gd" id="1_v16w0"]
-[ext_resource type="PackedScene" uid="uid://dj73kns4wdre5" path="res://scenes/end_menu.tscn" id="2_b5spl"]
 [ext_resource type="Texture2D" uid="uid://cb70bbc3hvwpr" path="res://Assets/desert/_Legacy_Assets/(legacy1.0)Minifantasy_DesolateDesertTiles.png" id="2_mnqy8"]
 [ext_resource type="Texture2D" uid="uid://c1y1bqeh8mp8v" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonWallTiles.png" id="2_syrrf"]
 [ext_resource type="Texture2D" uid="uid://vlf3gsyd0s7k" path="res://Assets/dungeon/Minifantasy_Dungeon_Assets/Tileset/Minifantasy_DungeonDoorTiles.png" id="3_k7qqd"]
@@ -2733,7 +2732,6 @@ sources/7 = SubResource("TileSetAtlasSource_8fm4g")
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_v16w0")
-scene_to_load = ExtResource("2_b5spl")
 
 [node name="TileMap" type="TileMap" parent="." groups=["ground"]]
 tile_set = SubResource("TileSet_ddn0e")
@@ -2763,6 +2761,7 @@ item_2 = ExtResource("12_cebj8")
 
 [node name="Rogue" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_csxqr")]
 position = Vector2(642, 363)
+bombs_count = 10
 target = NodePath("../Player")
 
 [node name="Druid" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_khtr1")]
@@ -2774,3 +2773,6 @@ position = Vector2(766, 253)
 target = NodePath("../Player")
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
+[connection signal="died" from="Rogue" to="." method="_on_rogue_died"]
+[connection signal="died" from="Druid" to="." method="_on_druid_died"]
+[connection signal="died" from="SwordMan" to="." method="_on_sword_man_died"]

@@ -38,4 +38,5 @@ func _die():
 				target.velocity += (target.position-position).normalized() * 20
 			break
 	await animator.animation_finished
+	died.emit()
 	queue_free()

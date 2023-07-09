@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvdybcjwl8wo6"]
+[gd_scene load_steps=3 format=3 uid="uid://cvdybcjwl8wo6"]
 
 [ext_resource type="FontFile" uid="uid://by48k5trkli1o" path="res://Assets/ARCADECLASSIC.TTF" id="1_4uhx2"]
 [ext_resource type="Script" path="res://scenes/end_menu.gd" id="1_rafny"]
-[ext_resource type="Script" path="res://Label.gd" id="2_6hvdx"]
-[ext_resource type="Script" path="res://scenes/Button.gd" id="3_kmewx"]
 
 [node name="EndMenu" type="Control"]
 layout_mode = 3
@@ -28,8 +26,6 @@ theme_override_colors/font_color = Color(0.686275, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_4uhx2")
 theme_override_font_sizes/font_size = 32
 text = "You won!"
-script = ExtResource("2_6hvdx")
-theme_override_font_sizes/font_size = 32
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -48,6 +44,5 @@ theme_override_colors/font_color = Color(0.686275, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_4uhx2")
 theme_override_font_sizes/font_size = 32
 text = "Main menu"
-script = ExtResource("3_kmewx")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

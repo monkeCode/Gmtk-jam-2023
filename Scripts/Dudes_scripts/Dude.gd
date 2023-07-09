@@ -176,7 +176,7 @@ func _die():
 	can_change_state = false
 	state = State.Die
 	await animator.animation_finished
-	queue_free()
+	super._die()
 
 func get_chance():
 	return randi() % 100 + 1
